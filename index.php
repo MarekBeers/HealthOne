@@ -15,7 +15,8 @@
         <div class="jumbotron text-center" ">
             <div class="row">
                 <div class="col-sm-3">
-                    <img class="img-fluid" src="img/zilverenkruis.png" alt="Logo">
+                    <img class="d-none d-sm-block img-fluid" src="img/zilverenkruis.png" alt="Logo">
+                    <img class="d-block d-sm-none img-fluid" src="img/placeholder.png" alt="Logo">
                 </div>
             </div>
         </div>
@@ -62,11 +63,11 @@
                 <a href="contact.php">
                     <img class="img-fluid" src="img/verzekeraar.png">
                     <h3>Zorgverzekeraar</h3>
-                    <p>Kan alles in zien voor het verzekeren voor de bedragen</p>
+                    <p>Kan alles in zien voor het verzekeren voor de bedragen.</p>
                 </a>
             </div>
         </div>
-        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <footer id="sticky-footer" class="py-4 bg-light text-dark-50">
             <div class="container text-center">
                 <small>Copyright &copy; Zilverenkruis</small>
             </div>
