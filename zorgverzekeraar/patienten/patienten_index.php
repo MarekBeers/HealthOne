@@ -30,21 +30,21 @@
     <div class="collapse navbar-collapse" id="collapse_target">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
+                <a class="nav-link" href="../../index.php">Home</a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="#">Inloggen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../contact.php">Contact</a>
+                <a class="nav-link" href="../../contact.php">Contact</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="row text-center">
     <div class="col-sm-4">
-        <a href="../contact.php">
+        <a href="patient_aanmaken/patient_aanmaken_index.php">
             <h3 class="text-danger">Patient aanmaken</h3>
             <p>Hier kunt u patienten toevoegen.</p>
         </a>

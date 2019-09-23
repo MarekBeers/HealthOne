@@ -22,11 +22,7 @@
 a{
     color: black;
 }
-/*footer {*/
-/*    position: fixed;*/
-/*    bottom: 0;*/
-/*    width: 100%;*/
-/*}*/
-footer > small {
-    text-align: center
+
+button{
+    margin-top: 20px;
 }
