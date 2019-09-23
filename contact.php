@@ -68,7 +68,7 @@
 
     <footer class="py-4 bg-light text-dark-50">
         <div class="container text-center">
-            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+            <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
         </div>
     </footer>
 </body>

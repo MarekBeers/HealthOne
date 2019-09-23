@@ -44,21 +44,21 @@
         </nav>
         <div class="row text-center">
             <div class="col-sm-4">
-                <a href="huisartsen_index.php">
+                <a href="huisarts/huisartsen_index.php">
                     <img class="img-fluid" src="img/doctor.png">
-                    <h3 class="text-danger">Dokter</h3>
-                    <p>De dokter kan uw gegevens inzien en aan passen en toevoegen.</p>
+                    <h3 class="text-danger">Doctor</h3>
+                    <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="apothekers_index.php">
+                <a href="apotheker/apothekers_index.php">
                     <img class="img-fluid" src="img/apotheker.png">
                     <h3 class="text-danger">Apotheker</h3>
                     <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="verzekeraar_index.php">
+                <a href="zorgverzekeraar/verzekeraar_index.php">
                     <img class="img-fluid" src="img/verzekeraar.png">
                     <h3 class="text-danger">Zorgverzekeraar</h3>
                     <p>Kan alles in zien voor het verzekeren voor de bedragen.</p>
@@ -74,7 +74,7 @@
     </div>
         <footer>
             <div class="container text-center">
-                <small>Copyright <em  class="text-danger"> &copy; </em>Zilveren Kruis</small>
+                <small>Copyright <em  class="text-danger"> &copy; </em>Zilverenkruis</small>
             </div>
         </footer>
     </div>
