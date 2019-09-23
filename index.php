@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="contact.php">
+                <a href="verzekeraar_index.php">
                     <img class="img-fluid" src="img/verzekeraar.png">
                     <h3 class="text-danger">Zorgverzekeraar</h3>
                     <p>Kan alles in zien voor het verzekeren voor de bedragen.</p>
@@ -72,7 +72,7 @@
             <p>Met HealthOne wordt dit allemaal gedigitaliseerd.</p>
         </div>
     </div>
-        <footer class="py-4 bg-light text-dark-50">
+        <footer>
             <div class="container text-center">
                 <small>Copyright <em  class="text-danger"> &copy; </em>Zilverenkruis</small>
             </div>
