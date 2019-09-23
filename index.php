@@ -44,14 +44,14 @@
         </nav>
         <div class="row text-center">
             <div class="col-sm-4">
-                <a href="contact.php">
+                <a href="huisartsen_index.php">
                     <img class="img-fluid" src="img/doctor.png">
                     <h3 class="text-danger">Doctor</h3>
                     <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="contact.php">
+                <a href="apothekers_index.php">
                     <img class="img-fluid" src="img/apotheker.png">
                     <h3 class="text-danger">Apotheker</h3>
                     <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
