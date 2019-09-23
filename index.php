@@ -46,8 +46,8 @@
             <div class="col-sm-4">
                 <a href="huisartsen_index.php">
                     <img class="img-fluid" src="img/doctor.png">
-                    <h3 class="text-danger">Doctor</h3>
-                    <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
+                    <h3 class="text-danger">Dokter</h3>
+                    <p>De dokter kan uw gegevens inzien en aan passen en toevoegen.</p>
                 </a>
             </div>
             <div class="col-sm-4">
@@ -74,7 +74,7 @@
     </div>
         <footer>
             <div class="container text-center">
-                <small>Copyright <em  class="text-danger"> &copy; </em>Zilverenkruis</small>
+                <small>Copyright <em  class="text-danger"> &copy; </em>Zilveren Kruis</small>
             </div>
         </footer>
     </div>
