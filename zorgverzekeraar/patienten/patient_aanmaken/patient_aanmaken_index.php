@@ -43,25 +43,30 @@
     </div>
 </nav>
 <form>
+    <div class="form-group">
     <label for="Naam">Naam</label>
-    <input class="form-control form-control-lg" id="Naam" type="text" placeholder="Naam">
+        <input class="form-control" id="Naam" type="text" placeholder="Naam">
+    </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Email adres</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
     </div>
-
+    <div class="form-group">
     <label for="Adres">Adres</label>
     <input class="form-control" id="Adres" type="text" placeholder="Adres">
-
+    </div>
+    <div class="form-group">
     <label for="Telefoonnummer">Telefoonnummer</label>
     <input class="form-control" id="Telefoonnummer" type="text" placeholder="Telefoonnummer">
-
+    </div>
+    <div class="form-group">
     <label for="Arts">Arts</label>
     <input class="form-control" id="Arts" type="text" placeholder="Arts">
-
+    </div>
+    <div class="form-group">
     <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>
     <input class="form-control" id="Verzekeringsnummmer" type="text" placeholder="Verzekeringsnummmer">
-
+    </div>
     <button type="submit" class="btn btn-primary">Verstuur</button>
 </form>
 <footer class="py-4 bg-light text-dark-50 text-center">
