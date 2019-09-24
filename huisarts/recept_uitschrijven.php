@@ -43,58 +43,47 @@
                 </ul>
             </div>
         </nav>
-        <div class="row text-center">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Edit</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Opc</td>
-                    <td>
-                        <button type="button" class="btn btn-success"><a href="recept_uitschrijven.php">Recept</a>
-                        </button>
-                        <button type="button" class="btn btn-primary">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Opc</td>
-                    <td>
-                        <button type="button" class="btn btn-success"><a href="recept_uitschrijven.php">Recept</a>
-                        </button>
-                        <button type="button" class="btn btn-primary">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>Opc</td>
-                    <td>
-                        <button type="button" class="btn btn-success"><a href="recept_uitschrijven.php">Recept</a>
-                        </button>
-                        <button type="button" class="btn btn-primary">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <button class="btn btn-success"><a href="patient_aanmaken_index.php">Toevoegen</a></button>
+        <form>
+            <div class="form-group">
+                <label for="Naam">Medicijn</label>
+                <select class="form-control" id="Naam" type="text" placeholder="Naam">
+                    <option value="0">ABC</option>
+                    <option value="0">DEF</option>
+                    <option value="0">GHI</option>
+                    <option value="0">JKL</option>
+                    <option value="0">MNO</option>
+                    <option value="0">PQR</option>
+                    <option value="0">STU</option>
 
-        </div>
+                </select>
+            </div>
+            <!--            <div class="form-group">-->
+            <!--                <label for="exampleInputEmail1"></label>-->
+            <!--                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Adres">Adres</label>-->
+            <!--                <input class="form-control" id="Adres" type="text" placeholder="Adres">-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Telefoonnummer">Telefoonnummer</label>-->
+            <!--                <input class="form-control" id="Telefoonnummer" type="text" placeholder="Telefoonnummer">-->
+            <!--            </div>-->
+            <!--                <div class="form-group">-->
+            <!--                <label for="Arts">Arts</label>-->
+            <!--                <input class="form-control" id="Arts" type="text" placeholder="Arts">-->
+            <!--                </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>-->
+            <!--                <input class="form-control" id="Verzekeringsnummmer" type="text" placeholder="Verzekeringsnummmer">-->
+            <!--            </div>-->
+            <button type="submit" class="btn btn-success">Uitschrijven</button>
+        </form>
         </div>
         <footer class="py-4 bg-light text-dark-50 text-center">
             <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
         </footer>
+
+
     </body>
 </html>
