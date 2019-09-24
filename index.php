@@ -46,7 +46,7 @@
             <div class="col-sm-4">
                 <a href="huisarts/huisartsen_index.php">
                     <img class="img-fluid" src="img/doctor.png">
-                    <h3 class="text-danger">Doctor</h3>
+                    <h3 class="text-danger">Dokter</h3>
                     <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
                 </a>
             </div>

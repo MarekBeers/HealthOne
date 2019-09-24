@@ -57,20 +57,24 @@
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Opc</td>
+                    <td><button type="button" class="btn btn-success">Recept</button> <button type="button" class="btn btn-primary">Update</button> <button type="button" class="btn btn-danger">Delete</button></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Opc</td>
+                    <td><button type="button" class="btn btn-success">Recept</button> <button type="button" class="btn btn-primary">Update</button> <button type="button" class="btn btn-danger">Delete</button></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Larry</td>
                     <td>Opc</td>
-                    <td><button type="button" class="btn btn-primary">Update</button> <button type="button" class="btn btn-danger">Delete</button></td>
+                    <td><button type="button" class="btn btn-success">Recept</button> <button type="button" class="btn btn-primary">Update</button> <button type="button" class="btn btn-danger">Delete</button></td>
                 </tr>
                 </tbody>
             </table>
+            <button class="btn btn-success"><a href="patient_aanmaken_index.php">Toevoegen</a></button>
+
         </div>
         <footer class="py-4 bg-light text-dark-50 text-center">
             <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
