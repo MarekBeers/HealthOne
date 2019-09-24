@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HealthOne</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-    <div class="container">
-        <div class="jumbotron text-center" ">
+    <head>
+        <meta charset="UTF-8">
+        <title>HealthOne</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron text-center"
+            ">
             <div class="row">
                 <div class="col-sm-3">
                     <img class="d-none d-sm-block img-fluid" src="img/healthtwo_text_transparent.png" alt="Logo">
@@ -47,14 +48,14 @@
                 <a href="huisarts/huisartsen_index.php">
                     <img class="img-fluid" src="img/doctor.png">
                     <h3 class="text-danger">Dokter</h3>
-                    <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
+                    <p>De dokter kan uw gegevens inzien en aan passen en toevoegen.</p>
                 </a>
             </div>
             <div class="col-sm-4">
                 <a href="apotheker/apothekers_index.php">
                     <img class="img-fluid" src="img/apotheker.png">
                     <h3 class="text-danger">Apotheker</h3>
-                    <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
+                    <p>Kan recepten inzien die de dokter heeft voorgeschreven.</p>
                 </a>
             </div>
             <div class="col-sm-4">
@@ -65,18 +66,16 @@
                 </a>
             </div>
         </div>
-    <div class="row">
-        <div class="text-center col-sm-12">
-            <H4 class="text-danger">HealthOne</H4>
-            <p>Recepten op papier mee geven en wachten bij de apotheker is verleden tijd!</p>
-            <p>Met HealthOne wordt dit allemaal gedigitaliseerd.</p>
-        </div>
-    </div>
-        <footer>
-            <div class="container text-center">
-                <small>Copyright <em  class="text-danger"> &copy; </em>Zilverenkruis</small>
+        <div class="row">
+            <div class="text-center col-sm-12">
+                <H4 class="text-danger">HealthOne</H4>
+                <p>Recepten op papier mee geven en wachten bij de apotheker is verleden tijd!</p>
+                <p>Met HealthOne wordt dit allemaal gedigitaliseerd.</p>
             </div>
+        </div>
+        </div>
+        <footer class="py-4 bg-light text-dark-50 text-center">
+            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
         </footer>
-    </div>
-</body>
+    </body>
 </html>

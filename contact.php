@@ -64,11 +64,11 @@
             <h5 class="text-danger">2300 AK Leiden</h5>
         </div>
     </div>
-
+    </div>
 
     <footer class="py-4 bg-light text-dark-50">
         <div class="container text-center">
-            <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
+            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
         </div>
     </footer>
 </body>
