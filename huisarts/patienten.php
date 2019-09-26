@@ -42,33 +42,39 @@
                 </ul>
             </div>
         </nav>
-        <div class="row text-center">
-            <table class="table">
+        <div class="table-responsive">
+            <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
+                    <th scope="col">Naam</th>
+                    <th scope="col">Geboortedatum</th>
                     <th scope="col">Edit</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Opc</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Opc</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>Opc</td>
-                    <td><button type="button" class="btn btn-primary">Update</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                </tr>
+                <?php
+
+                try {
+                    $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
+                    $query = $db->prepare("SELECT * FROM patient");
+                    $query->execute();
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as &$data){
+                        echo "<tr>";
+                        echo "<td>".$data['patient_id']."</td>";
+                        echo "<td>".$data["naam"] ."</td>";
+                        echo "<td>" . $data['geboortedatum'] . "</td>";
+                        echo "<td><a href='patient_info.php?id=".$data['patient_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
+                        echo "</tr>";
+
+                    }
+                }
+                catch(PDOException $e){
+                    die("OEPS iets is fout!".$e->getMessage());
+
+                }
+                ?>
                 </tbody>
             </table>
         </div>

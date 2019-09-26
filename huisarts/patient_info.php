@@ -42,33 +42,61 @@
         </ul>
     </div>
 </nav>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Telefoon</th>
+                <th>Geboortedatum</th>
+                <th>Adres</th>
+                <th>Arts</th>
+                <th>Verzekeringnummer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            try {
+                $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
+                $query = $db->prepare("SELECT * FROM patient WHERE patient_id = " . $_GET['id']);
+                $query->execute();
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($result as &$data) {
+                    echo "<tr>";
+                    echo "<td>" . $data['naam'] . "</td>";
+                    echo "<td>" . $data['email'] . "</td>";
+                    echo "<td>" . $data['telefoon'] . "</td>";
+                    echo "<td>" . $data['geboortedatum'] . "</td>";
+                    echo "<td>" . $data['adres'] . "</td>";
+                    echo "<td>" . $data['arts'] . "</td>";
+                    echo "<td>" . $data['verzekeringnummer'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+            catch(PDOException $e){
+                die("wank".$e->getMessage());
+
+            }
+            ?>
+        </tbody>
+
+    </table>
+</div>
 <div class="row text-center">
-    <div class="col-sm-4">
-        <a href="patienten/patienten.php">
-            <img class="img-fluid" src="../img/doctor.png">
-            <h3 class="text-danger">Patienten</h3>
-            <p>Hier kunt u patienten gegevens toevoegen, inzien, bewerken, en verwijderen.</p>
-        </a>
-    </div>
-    <div class="col-sm-4">
-        <a href="patienten/">
-            <img class="img-fluid" src="../img/apotheker.png">
-            <h3 class="text-danger">Recepten</h3>
-            <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
-        </a>
-    </div>
-    <div class="col-sm-4">
-        <a href="patienten/">
-            <img class="img-fluid" src="../img/verzekeraar.png">
-            <h3 class="text-danger">Huisartsen en Apothekers</h3>
-            <p>Hier kunt u apothekers en huisartsen toevoegen, inzien, bewerken, en verwijderen.</p>
-        </a>
+    <div class="col-lg-9"></div>
+    <div class="col-lg-3">
+        <button type="button" class="btn btn-success">Recept</button>
+        <button type="button" class="btn btn-warning">Edit</button>
+        <button type="button" class="btn btn-danger">Delete</button>
     </div>
 </div>
+
+
 <footer class="py-4 bg-light text-dark-50 text-center">
-    <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
+    <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
 </footer>
 
-</div>
 </body>
 </html>

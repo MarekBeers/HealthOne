@@ -44,7 +44,7 @@
 </nav>
 <div class="row text-center">
     <div class="col-sm-6">
-        <a href="./huisartsen_overzicht.php">
+        <a href="overzicht/patienten.php">
             <img class="img-fluid" src="../img/doctor.png">
             <h3 class="text-danger">Patienten</h3>
             <p>Hier kunt patienten gegevens toevoegen, inzien, bewerken, en verwijderen.</p>
