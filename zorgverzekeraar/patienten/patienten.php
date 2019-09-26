@@ -44,7 +44,7 @@
         </nav>
         <div class="row text-center">
             <div class="col-lg-2">
-                <input id="myInput" type="text" placeholder="Vul gegevens in">
+                <input  class="form-control form-control-underlined border-danger" id="myInput" type="text" placeholder="Vul gegevens in">
             </div>
             <div class="col-lg-8">
             </div>

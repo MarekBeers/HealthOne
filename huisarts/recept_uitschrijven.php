@@ -12,7 +12,8 @@
     </head>
     <body>
         <div class="container">
-            <div class="jumbotron text-center" ">
+            <div class="jumbotron text-center"
+            ">
             <div class="row">
                 <div class="col-sm-3">
                     <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
@@ -42,63 +43,47 @@
                 </ul>
             </div>
         </nav>
-        <div class="row text-center">
-            <div class="col-lg-2">
-                <input  class="form-control form-control-underlined border-danger" id="myInput" type="text" placeholder="Vul gegevens in">
+        <form>
+            <div class="form-group">
+                <label for="Naam">Medicijn</label>
+                <select class="form-control" id="Naam" type="text" placeholder="Naam">
+                    <option value="0">ABC</option>
+                    <option value="0">DEF</option>
+                    <option value="0">GHI</option>
+                    <option value="0">JKL</option>
+                    <option value="0">MNO</option>
+                    <option value="0">PQR</option>
+                    <option value="0">STU</option>
+
+                </select>
             </div>
-            <div class="col-lg-10">
-            </div>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Naam</th>
-                    <th scope="col">Geboortedatum</th>
-                    <th scope="col">Edit</th>
-                </tr>
-                </thead>
-                <tbody id="myTable">
-                <?php
-
-                try {
-                    $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
-                    $query = $db->prepare("SELECT * FROM patient");
-                    $query->execute();
-                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($result as &$data){
-                        echo "<tr>";
-                        echo "<td>".$data['patient_id']."</td>";
-                        echo "<td>".$data["naam"] ."</td>";
-                        echo "<td>" . $data['geboortedatum'] . "</td>";
-                        echo "<td><a href='patient_info.php?id=".$data['patient_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
-                        echo "</tr>";
-
-                    }
-                }
-                catch(PDOException $e){
-                    die("OEPS iets is fout!".$e->getMessage());
-
-                }
-                ?>
-                </tbody>
-            </table>
+            <!--            <div class="form-group">-->
+            <!--                <label for="exampleInputEmail1"></label>-->
+            <!--                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Adres">Adres</label>-->
+            <!--                <input class="form-control" id="Adres" type="text" placeholder="Adres">-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Telefoonnummer">Telefoonnummer</label>-->
+            <!--                <input class="form-control" id="Telefoonnummer" type="text" placeholder="Telefoonnummer">-->
+            <!--            </div>-->
+            <!--                <div class="form-group">-->
+            <!--                <label for="Arts">Arts</label>-->
+            <!--                <input class="form-control" id="Arts" type="text" placeholder="Arts">-->
+            <!--                </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>-->
+            <!--                <input class="form-control" id="Verzekeringsnummmer" type="text" placeholder="Verzekeringsnummmer">-->
+            <!--            </div>-->
+            <button type="submit" class="btn btn-success">Uitschrijven</button>
+        </form>
         </div>
         <footer class="py-4 bg-light text-dark-50 text-center">
             <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
         </footer>
 
-        </div>
-        <script>
-            $(document).ready(function(){
-                $("#myInput").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-                    $("#myTable tr").filter(function() {
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-                });
-            });
-        </script>
+
     </body>
 </html>
