@@ -23,7 +23,8 @@ a{
     color: black;
 }
 
-/*
-button{
-    margin-top: 20px;
-}*/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

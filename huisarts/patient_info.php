@@ -87,9 +87,11 @@
 <div class="row text-center">
     <div class="col-lg-9"></div>
     <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Recept</button>
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <?php
+        echo "<td><a href='recept_uitschrijven.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-success\">Recept</button>";
+        echo "<td><a href='bewerken.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-warning\">Edit</button>";
+        echo "<td><a href='drop.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-danger\">Delete</button>";
+        ?>
     </div>
 </div>
 
