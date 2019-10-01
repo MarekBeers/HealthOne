@@ -47,13 +47,13 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Naam</th>
-                <th>Email</th>
-                <th>Telefoon</th>
-                <th>Geboortedatum</th>
-                <th>Adres</th>
-                <th>Arts</th>
-                <th>Verzekeringnummer</th>
+                <th class="text-danger">Naam</th>
+                <th class="text-danger">Email</th>
+                <th class="text-danger">Telefoon</th>
+                <th class="text-danger">Geboortedatum</th>
+                <th class="text-danger">Adres</th>
+                <th class="text-danger">Arts</th>
+                <th class="text-danger">Verzekeringnummer</th>
             </tr>
         </thead>
         <tbody>

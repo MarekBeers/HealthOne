@@ -57,10 +57,10 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Naam</th>
-                    <th scope="col">Geboortedatum</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col" class="text-danger">#</th>
+                    <th scope="col" class="text-danger">Naam</th>
+                    <th scope="col" class="text-danger">Geboortedatum</th>
+                    <th scope="col" class="text-danger">Edit</th>
                 </tr>
                 </thead>
                 <tbody id="myTable">
