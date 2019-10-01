@@ -60,7 +60,7 @@
     <input class="form-control" id="Telefoonnummer" type="text" name="telefoonnummer" placeholder="Telefoonnummer">
     </div>
     <div class="form-group">
-    <label for="geboortedatum">Arts</label>
+    <label for="geboortedatum">Geboortedatum</label>
         <input class="form-control" name="geboortedatum" type="date">
 <!--    <input class="form-control" id="Arts" type="text" placeholder="Arts">-->
     </div>
@@ -70,10 +70,11 @@
     </div>
     <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
 </form>
-<footer class="py-4 bg-light text-dark-50 text-center">
-    <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
-</footer>
+
 
 </div>
+    <footer class="py-4 bg-light text-dark-50 text-center">
+        <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+    </footer>
 </body>
 </html>

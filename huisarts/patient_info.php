@@ -89,7 +89,7 @@
     <div class="col-lg-3">
         <?php
         echo "<td><a href='recept_uitschrijven.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-success\">Recept</button>";
-        echo "<td><a href='bewerken.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-warning\">Edit</button>";
+        echo "<td><a href='edit.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-warning\">Edit</button>";
         echo "<td><a href='drop.php?id=".$_GET['id']."'>"."<button type=\"button\" class=\"btn btn-danger\">Delete</button>";
         ?>
     </div>

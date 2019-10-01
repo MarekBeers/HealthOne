@@ -42,38 +42,44 @@
         </ul>
     </div>
 </nav>
-<form>
+<form action="aanmaken/success.php" method="POST">
     <div class="form-group">
-    <label for="Naam">Naam</label>
-        <input class="form-control" id="Naam" type="text" placeholder="Naam">
+        <label for="Naam">Naam</label>
+        <input class="form-control" id="Naam" name="Naam" placeholder="Naam" required type="text">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email adres</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <label for="Fabrikant">Fabrikant</label>
+        <input class="form-control" id="Fabrikant" name="Fabrikant" placeholder="Fabrikant" required type="text">
     </div>
     <div class="form-group">
-    <label for="Adres">Adres</label>
-    <input class="form-control" id="Adres" type="text" placeholder="Adres">
-    </div>
-    <div class="form-group">
-    <label for="Telefoonnummer">Telefoonnummer</label>
-    <input class="form-control" id="Telefoonnummer" type="text" placeholder="Telefoonnummer">
-    </div>
-    <div class="form-group">
-    <label for="Arts">Arts</label>
-    <input class="form-control" id="Arts" type="text" placeholder="Arts">
-    </div>
-    <div class="form-group">
-    <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>
-    <input class="form-control" id="Verzekeringsnummmer" type="text" placeholder="Verzekeringsnummmer">
-    </div>
-    <button type="submit" class="btn btn-primary">Verstuur</button>
-</form>
+        <label for="Vergoeding">Vergoeding</label>
 
+            <select class="form-control" id="Vergoeding" name="Vergoeding">
+                <option>Vergoed</option>
+                <option>Onvergoed</option>
+            </select>
+
+
+    </div>
+
+    <div class="form-group">
+        <label for="Bijwerking">Bijwerking</label>
+        <input class="form-control" id="Bijwerking" name="Bijwerking" placeholder="Bijwerking" required type="text">
+    </div>
+    <div class="form-group">
+        <label for="Effect">Effect</label>
+        <input class="form-control" id="Effect" name="Effect" placeholder="Effect" required type="text">
+    </div>
+    <div class="form-group">
+        <label for="Prijs">Prijs</label>
+        <input class="form-control" id="Prijs" name="Prijs" placeholder="Prijs" required type="Prijs">
+    </div>
+    <button type="submit" name="submit"  class="btn btn-primary">Verstuur</button>
+</form>
+<footer class="py-4 bg-light text-dark-50 text-center">
+    <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
+</footer>
 
 </div>
-    <footer class="py-4 bg-light text-dark-50 text-center">
-        <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
-    </footer>
 </body>
 </html>

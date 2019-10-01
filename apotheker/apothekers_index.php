@@ -60,15 +60,16 @@
     <div class="col-sm-4">
         <a href="../contact.php">
             <img class="img-fluid" src="../img/verzekeraar.png">
-            <h3 class="text-danger">Huisartsen en Apothekers</h3>
-            <p>Hier kunt apothekers en huisartsen toevoegen, inzien, bewerken, en verwijderen.</p>
+            <h3 class="text-danger">Medicijnen</h3>
+            <p>Hier kunt u een lijst met medicijnen inzien die kunnen worden voorgeschreven aan de patient.</p>
         </a>
     </div>
 </div>
-<footer class="py-4 bg-light text-dark-50 text-center">
-    <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
-</footer>
+
 
 </div>
+    <footer class="py-4 bg-light text-dark-50 text-center">
+        <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+    </footer>
 </body>
 </html>

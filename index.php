@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron text-center" ">
+        <div class="jumbotron text-center">
             <div class="row">
                 <div class="col-sm-3">
                     <img class="d-none d-sm-block img-fluid" src="img/healthtwo_text_transparent.png" alt="Logo">
@@ -72,11 +72,12 @@
             <p>Met HealthOne wordt dit allemaal gedigitaliseerd.</p>
         </div>
     </div>
-        <footer>
-            <div class="container text-center">
-                <small>Copyright <em  class="text-danger"> &copy; </em>Zilverenkruis</small>
-            </div>
-        </footer>
+
     </div>
+    <footer>
+        <div class="container text-center">
+            <small>Copyright <em  class="text-danger"> &copy; </em>Zilveren Kruis</small>
+        </div>
+    </footer>
 </body>
 </html>

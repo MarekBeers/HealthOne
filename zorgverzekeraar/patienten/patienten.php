@@ -90,9 +90,7 @@
                 </tbody>
             </table>
         </div>
-        <footer class="py-4 bg-light text-dark-50 text-center">
-            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
-        </footer>
+
 
         </div>
 
@@ -106,5 +104,8 @@
                 });
             });
         </script>
+        <footer class="py-4 bg-light text-dark-50 text-center">
+            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+        </footer>
     </body>
 </html>

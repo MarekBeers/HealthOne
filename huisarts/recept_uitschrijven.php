@@ -57,26 +57,6 @@
 
                 </select>
             </div>
-            <!--            <div class="form-group">-->
-            <!--                <label for="exampleInputEmail1"></label>-->
-            <!--                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
-            <!--            </div>-->
-            <!--            <div class="form-group">-->
-            <!--                <label for="Adres">Adres</label>-->
-            <!--                <input class="form-control" id="Adres" type="text" placeholder="Adres">-->
-            <!--            </div>-->
-            <!--            <div class="form-group">-->
-            <!--                <label for="Telefoonnummer">Telefoonnummer</label>-->
-            <!--                <input class="form-control" id="Telefoonnummer" type="text" placeholder="Telefoonnummer">-->
-            <!--            </div>-->
-            <!--                <div class="form-group">-->
-            <!--                <label for="Arts">Arts</label>-->
-            <!--                <input class="form-control" id="Arts" type="text" placeholder="Arts">-->
-            <!--                </div>-->
-            <!--            <div class="form-group">-->
-            <!--                <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>-->
-            <!--                <input class="form-control" id="Verzekeringsnummmer" type="text" placeholder="Verzekeringsnummmer">-->
-            <!--            </div>-->
             <button type="submit" class="btn btn-success">Uitschrijven</button>
         </form>
         </div>
