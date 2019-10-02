@@ -12,14 +12,14 @@ TODO: Probleem met het parsen van adres en naam (achternaam)
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
 </head>
 
 <body>
     <?php
 try {
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                $query = $db->prepare("SELECT * from patient WHERE patient_id = " . $_GET['id']);
+    $query = $db->prepare("SELECT * from arts WHERE id = " . $_GET['id']);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach ($result as &$data) {
@@ -33,11 +33,11 @@ catch(PDOException $e){
 
 ?>
     <div class="container">
-        <div class="jumbotron text-center" ">
+        <div class="jumbotron text-center">
             <div class=" row">
             <div class="col-sm-3">
-                <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
-                <img class="d-block d-sm-none img-fluid" src="../img/placeholder.png" alt="Logo">
+                <img class="d-none d-sm-block img-fluid" src="../../img/healthtwo_text_transparent.png" alt="Logo">
+                <img class="d-block d-sm-none img-fluid" src="../../img/placeholder.png" alt="Logo">
             </div>
         </div>
     </div>
@@ -45,20 +45,20 @@ catch(PDOException $e){
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="../index.php">
-            <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
+        <a class="navbar-brand" href="../../index.php">
+            <img class="navbrand" src="../../img/healthtwo_logo_transparent.png" alt="Logo">
         </a>
         <div class="collapse navbar-collapse" id="collapse_target">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Home</a>
+                    <a class="nav-link" href="../../index.php">Home</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">Inloggen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact.php">Contact</a>
+                    <a class="nav-link" href="../../contact.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -71,27 +71,15 @@ catch(PDOException $e){
         <input type="text" class="form-control" name="naam" id="naam" value="<?php echo $data['naam']?>">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email adres</label>
-        <input type="text" class="form-control" name="emailadres" id="emailadres" value="<?php echo $data['email']?>">
-
-    </div>
-    <div class="form-group">
         <label for="Adres">Adres</label>
         <input type="text" class="form-control" name="adres" id="" value="<?php echo $data['adres']?>">
 
     </div>
     <div class="form-group">
         <label for="Telefoonnummer">Telefoonnummer</label>
-        <input type="text" class="form-control" name="telefoonnummer" id="telefoonnummer" value="<?php echo $data['telefoon']?>">
+        <input type="text" class="form-control" name="telefoonnummer" id="telefoonnummer"
+            value="<?php echo $data['telefoon']?>">
 
-    </div>
-    <div class="form-group">
-        <label for="geboortedatum">Geboortedatum</label>
-        <input type="date" class="form-control" name="geboortedatum" id="geboortedatum" value="<?php echo $data['geboortedatum'] ?>">
-    </div>
-    <div class="form-group">
-        <label for="Verzekeringsnummmer">Verzekeringsnummmer</label>
-        <input type="text" name="verzekeringnummer" id="verzekeringnummer" class="form-control" value="<?php echo $data['verzekeringnummer'] ?>">
     </div>
     <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
     </form>

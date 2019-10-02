@@ -51,7 +51,7 @@
     <div class="col-lg-7">
     </div>
     <div class="col-lg-3">
-        <a href="overzicht/aanmaken.php" type="button" class="btn btn-success">Medicijn aanmaken</a>
+        <a href="overzicht/aanmaken.php"><button class='btn btn-success' type=button>Medicijn aanmaken</button></a>
 
     </div>
 </div>
@@ -62,6 +62,7 @@
         <tr>
             <th scope="col" class="text-danger">Naam</th>
             <th scope="col" class="text-danger">Fabrikant</th>
+            
             <th scope="col" class="text-danger">Effect</th>
             <th scope="col" class="text-danger">Edit</th>
         </tr>
