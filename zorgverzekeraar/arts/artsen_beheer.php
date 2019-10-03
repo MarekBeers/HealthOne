@@ -30,14 +30,14 @@
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Home</a>
+                        <a class="nav-link" href="../../index.php">Home</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Inloggen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contact.php">Contact</a>
+                        <a class="nav-link" href="../../contact.php">Contact</a>
                     </li>
                 </ul>
             </div>

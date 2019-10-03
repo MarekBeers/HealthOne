@@ -24,7 +24,7 @@
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="../index.php">
+    <a class="navbar-brand" href="../../index.php">
         <img class="navbrand" src="../../img/healthtwo_logo_transparent.png" alt="Logo">
     </a>
     <div class="collapse navbar-collapse" id="collapse_target">
