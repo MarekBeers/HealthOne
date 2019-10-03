@@ -24,7 +24,19 @@
 catch(PDOException $e) {
     die("wank".$e->getMessage());
 }
-   ?>
+
+if (isset($_POST['submit'])) {
+    $name = filter_var($_POST['naam'], FILTER_SANITIZE_STRING);
+    $adres = filter_var($_POST['adres'], FILTER_SANITIZE_STRING);
+    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
+    $specialisatie = filter_var($_POST['specialisatie'], FILTER_SANITIZE_STRING);
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+    $query = $db->prepare("insert into recept (patient_id, dosis, herhalingsrecept, medicijn_id, commentaar) values ('$patient_id', '$dosis', '$herhalingsrecept', '$medicijn_id', '$commentaar');");
+    $query->execute();
+   echo($query->queryString);
+    header('refresh:0;url=artsen_beheer.php');
+}
+?>
     <div class="container">
         <div class="jumbotron text-center">
             <div class="row">
@@ -56,34 +68,39 @@ catch(PDOException $e) {
                 </ul>
             </div>
         </nav>
-        <form>
+        <form method="POST">
             <div class="form-group">
                 <label for="Naam">Medicijn</label>
                 <select class="form-control" id="medicijnSelect" type="text" placeholder="Leeg">
                     <?php
                     foreach ($result as &$data) {
-                        echo "<option value=".$data['id']. ">". $data['naam']."</option>";
+                        echo "<option name='medicijn_id' value=".$data['id']. ">". $data['naam']."</option>";
                     } 
                     ?>
                 </select>
-                <label for="Naam"></label>
-                <textarea class="form-control" name="naam" type="text" placeholder="Naam">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Email adres</label>
-                <input type="email" class="form-control" name="emailadres" id="exampleInputEmail1" placeholder="Email">
+                <label for="dosis">Dosis</label>
+                <input class="form-control" name="dosis" type="text" placeholder="Dosis">
             </div>
-
-
+            <div class="form-group">
+                <label for="herhalingsrecept">Is herhalingsrecept?</label>
+                <select name="herhalingsrecept" id="herhalingsrecept" class="form-control">
+                  <option value='1'>Ja</option>
+                  <option value='0'>Nee</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="commentaar">Commentaar</label>
+                <input class="form-control" name="commentaar" type="text" placeholder="Commentaar">
+            </div>
+            <button type="submit" value="submit" class="btn btn-success">Uitschrijven</button>
     </div>
-    <button type="submit" class="btn btn-success">Uitschrijven</button>
     </form>
-    </div>
     <footer class="py-4 bg-light text-dark-50 text-center">
         <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
     </footer>
-
-
+    </div>
 </body>
 
 </html>

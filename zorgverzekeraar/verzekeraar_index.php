@@ -50,7 +50,7 @@
         </a>
     </div>
     <div class="col-sm-4">
-        <a href="patienten/">
+        <a href="../recepten/recepten.php">
             <h3 class="text-danger">Recepten</h3>
             <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
         </a>
