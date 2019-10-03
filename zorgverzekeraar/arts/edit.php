@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare("UPDATE arts SET naam='$name',adres='$adres',telefoon = '$telefoonnummer' WHERE id =" . $_GET['id']);
     $query->execute();
     echo($query->queryString);
-    header('refresh:1;url=artsen_beheer.php');
+    header('refresh:0;url=artsen_beheer.php');
 }
 
 ?>

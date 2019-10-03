@@ -47,7 +47,7 @@
             <div class="col-lg-2">
                 <input  class="form-control form-control-underlined border-danger" id="myInput" type="text" placeholder="Vul gegevens in">
             </div>
-            <a href="patient_aanmaken_index.php">
+            <a href="arts_aanmaken.php">
             <button class="btn btn-success" type="button">Toevoegen</button>
             </a>
             <div class="col-lg-10">

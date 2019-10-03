@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare("insert into patient (naam, email, telefoon, geboortedatum, adres, verzekeringnummer) values ('$name', '$email', '$telefoonnummer', '$geboortedatum', '$adres','$verzekeringnummer');");
     $query->execute();
     echo($query->queryString);
-    header('refresh:1;url=patienten.php');
+    header('refresh:0;url=patienten.php');
 }
 ?>
 <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">

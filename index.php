@@ -51,7 +51,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="apotheker/apothekers_index.php">
+                <a href="apotheker/index.php">
                     <img class="img-fluid" src="img/apotheker.png">
                     <h3 class="text-danger">Apotheker</h3>
                     <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>

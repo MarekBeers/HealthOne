@@ -4,5 +4,5 @@
     $query->execute();
    echo($query->queryString);
     echo("<br>Arts verwijderd.");
-    header('refresh:2;url=artsen_beheer.php');
+    header('refresh:0;url=artsen_beheer.php');
 ?>

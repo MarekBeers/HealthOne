@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare("UPDATE patient SET naam='$name',email='$email',adres='$adres',telefoon = '$telefoonnummer', geboortedatum='$geboortedatum',verzekeringnummer= $verzekeringnummer WHERE patient_id =" . $_GET['id']);
     $query->execute();
     echo($query->queryString);
-    header('refresh:2;url=patienten.php');
+    header('refresh:0;url=patienten.php');
 }
 ?>
     <div class="container">

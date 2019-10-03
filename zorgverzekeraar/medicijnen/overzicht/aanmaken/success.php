@@ -20,6 +20,6 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare("insert into medicijn (naam, fabrikant, vergoeding, bijwerkingen, effect, prijs) values ('$naam', '$fabrikant', '$vergoeding', '$bijwerking', '$effect', '$prijs');");
     $query->execute();
     echo($query->queryString);
-    // header("Location: ../../overzicht.php");
+    header("Location: ../../overzicht.php");
 }
 ?>

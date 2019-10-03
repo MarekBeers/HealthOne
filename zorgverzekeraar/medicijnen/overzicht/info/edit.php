@@ -97,7 +97,7 @@ catch(PDOException $e){
     </div>
     <div class="form-group">
         <label for="Prijs">Prijs</label>
-        <input value="<?php echo $data['prijs']; ?>" class="form-control" id="Prijs" name="Prijs" placeholder="Prijs" required type="Prijs">
+        <input value="<?php echo $data['prijs']; ?>" class="form-control" id="Prijs" name="Prijs" placeholder="Prijs"  required type="number" step="0.01" value="1" min="0.00" max="10000.00">
     </div>
     <a href="edit/update.php" ><button type="submit" name="submit"  class="btn btn-primary">Verstuur</button></a>
 </form>
