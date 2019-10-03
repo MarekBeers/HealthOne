@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron text-center" ">
+    <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-3">
             <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
@@ -57,6 +57,13 @@
             <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
         </a>
     </div>
+<!--    <div class="col-sm-4">-->
+<!--        <a href="../contact.php">-->
+<!--            <img class="img-fluid" src="../img/verzekeraar.png">-->
+<!--            <h3 class="text-danger">Huisartsen en Apothekers</h3>-->
+<!--            <p>Hier kunt apothekers en huisartsen toevoegen, inzien, bewerken, en verwijderen.</p>-->
+<!--        </a>-->
+<!--    </div>-->
 </div>
 
 

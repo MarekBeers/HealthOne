@@ -30,6 +30,16 @@ catch(PDOException $e){
     die("wank".$e->getMessage());
 
 }
+if (isset($_POST['submit'])) {
+    $name = filter_var($_POST['naam'], FILTER_SANITIZE_STRING);
+    $adres = filter_var($_POST['adres'], FILTER_SANITIZE_STRING);
+    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+    $query = $db->prepare("UPDATE arts SET naam='$name',adres='$adres',telefoon = '$telefoonnummer' WHERE id =" . $_GET['id']);
+    $query->execute();
+    echo($query->queryString);
+    header('refresh:1;url=artsen_beheer.php');
+}
 
 ?>
     <div class="container">
@@ -63,9 +73,7 @@ catch(PDOException $e){
             </ul>
         </div>
     </nav>
-    <?php
-        echo ('<form action=edit2.php?id='.$_GET['id']. ' method="POST">');
-        ?>
+    <form method="POST">
     <div class="form-group">
         <label for="Naam">Naam</label>
         <input type="text" class="form-control" name="naam" id="naam" value="<?php echo $data['naam']?>">
