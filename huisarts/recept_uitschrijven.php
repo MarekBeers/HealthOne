@@ -26,15 +26,16 @@ catch(PDOException $e) {
 }
 
 if (isset($_POST['submit'])) {
-    $name = filter_var($_POST['naam'], FILTER_SANITIZE_STRING);
-    $adres = filter_var($_POST['adres'], FILTER_SANITIZE_STRING);
-    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
-    $specialisatie = filter_var($_POST['specialisatie'], FILTER_SANITIZE_STRING);
+    $patient_id = filter_var($_GET['id'], FILTER_SANITIZE_STRING);
+    $dosis = filter_var($_POST['dosis'], FILTER_SANITIZE_STRING);
+    $herhalingsrecept = filter_var($_POST['herhalingsrecept'], FILTER_SANITIZE_NUMBER_INT);
+    $medicijn_id = filter_var($_POST['res'], FILTER_SANITIZE_STRING);
+    $commentaar = filter_var($_POST['commentaar'], FILTER_SANITIZE_STRING);
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
     $query = $db->prepare("insert into recept (patient_id, dosis, herhalingsrecept, medicijn_id, commentaar) values ('$patient_id', '$dosis', '$herhalingsrecept', '$medicijn_id', '$commentaar');");
     $query->execute();
    echo($query->queryString);
-    header('refresh:0;url=artsen_beheer.php');
+    // header('refresh:0;');
 }
 ?>
     <div class="container">
@@ -71,7 +72,7 @@ if (isset($_POST['submit'])) {
         <form method="POST">
             <div class="form-group">
                 <label for="Naam">Medicijn</label>
-                <select class="form-control" id="medicijnSelect" type="text" placeholder="Leeg">
+                <select class="form-control" name="res" id="medicijnSelect" type="text" placeholder="Leeg">
                     <?php
                     foreach ($result as &$data) {
                         echo "<option name='medicijn_id' value=".$data['id']. ">". $data['naam']."</option>";
@@ -94,7 +95,8 @@ if (isset($_POST['submit'])) {
                 <label for="commentaar">Commentaar</label>
                 <input class="form-control" name="commentaar" type="text" placeholder="Commentaar">
             </div>
-            <button type="submit" value="submit" class="btn btn-success">Uitschrijven</button>
+            <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
+
     </div>
     </form>
     <footer class="py-4 bg-light text-dark-50 text-center">
