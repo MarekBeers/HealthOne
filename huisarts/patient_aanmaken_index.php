@@ -20,6 +20,21 @@
         </div>
     </div>
 </div>
+<?php
+if (isset($_POST['submit'])) {
+    $name = filter_var($_POST['naam'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['emailadres'], FILTER_SANITIZE_EMAIL);
+    $adres = filter_var($_POST['adres'], FILTER_SANITIZE_STRING);
+    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
+    $geboortedatum = filter_var($_POST['geboortedatum'], FILTER_SANITIZE_STRING);
+    $verzekeringnummer = filter_var($_POST['verzekeringnummer'], FILTER_SANITIZE_STRING);
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+    $query = $db->prepare("insert into patient (naam, email, telefoon, geboortedatum, adres, verzekeringnummer) values ('$name', '$email', '$telefoonnummer', '$geboortedatum', '$adres','$verzekeringnummer');");
+    $query->execute();
+    echo($query->queryString);
+    header('refresh:1;url=patienten.php');
+}
+?>
 <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +57,7 @@
         </ul>
     </div>
 </nav>
-<form action="success.php" method="POST">
+<form method="POST">
     <div class="form-group">
     <label for="Naam">Naam</label>
         <input class="form-control" name="naam" type="text" placeholder="Naam">
