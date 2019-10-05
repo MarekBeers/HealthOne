@@ -31,10 +31,12 @@ if (isset($_POST['submit'])) {
     $herhalingsrecept = filter_var($_POST['herhalingsrecept'], FILTER_SANITIZE_NUMBER_INT);
     $medicijn_id = filter_var($_POST['res'], FILTER_SANITIZE_STRING);
     $commentaar = filter_var($_POST['commentaar'], FILTER_SANITIZE_STRING);
+    $datum = date('d-m-Y H:i');
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("insert into recept (patient_id, dosis, herhalingsrecept, medicijn_id, commentaar) values ('$patient_id', '$dosis', '$herhalingsrecept', '$medicijn_id', '$commentaar');");
+    $query = $db->prepare("insert into recept (patient_id, dosis, herhalingsrecept, medicijn_id, commentaar, datum) values ('$patient_id', '$dosis', '$herhalingsrecept', '$medicijn_id', '$commentaar', '$datum');");
     $query->execute();
    echo($query->queryString);
+   header("Location: patient_info.php?id=" . $_GET['id']);
     // header('refresh:0;');
 }
 ?>
