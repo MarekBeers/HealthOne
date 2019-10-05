@@ -1,6 +1,3 @@
-<!--
-TODO: Probleem met het parsen van adres en naam (achternaam)
--->
 <!DOCTYPE html>
 <html lang="en">
 
