@@ -98,8 +98,7 @@ CREATE TABLE `medicijn` (
 INSERT INTO `medicijn` (`id`, `naam`, `fabrikant`, `vergoeding`, `bijwerkingen`, `effect`, `prijs`) VALUES
 (25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op kanker.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
 (27, 'Maalox', 'C-Bedrijf', 1, 'Maagdarmklachten', 'Algeldraat en magnesiumzouten binden maagzuur. Dit maakt de maaginhoud minder zuur.', 20.02),
-(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99),
-(0, 'Young Gods', 'SwagGoo', 1, 'Grumpex a hoe', 'It be crazy', 952.52);
+(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99);
 
 -- --------------------------------------------------------
 
@@ -186,10 +185,6 @@ CREATE TABLE `recept` (
 -- Gegevens worden geëxporteerd voor tabel `recept`
 --
 
-INSERT INTO `recept` (`recept_id`, `patient_id`, `dosis`, `herhalingsrecept`, `medicijn_id`, `commentaar`, `datum`) VALUES
-(3, 81, 'grumpex still a hoe!', 1, 0, 'Yeah.', '0000-00-00'),
-(4, 81, 'grumpex still a hoe!', 1, 27, 'gebrabbel gebrabbel gebrabbel gebrabbel gebrabbel gebrabbel ', '05-10-2019 19:15'),
-(5, 81, 'grumpex still a hoe!', 1, 27, 'gebrabbel gebrabbel gebrabbel gebrabbel gebrabbel gebrabbel ', '05-10-2019 19:16');
 
 --
 -- Indexen voor geëxporteerde tabellen
