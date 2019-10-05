@@ -98,8 +98,7 @@ CREATE TABLE `medicijn` (
 INSERT INTO `medicijn` (`id`, `naam`, `fabrikant`, `vergoeding`, `bijwerkingen`, `effect`, `prijs`) VALUES
 (25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op kanker.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
 (27, 'Maalox', 'C-Bedrijf', 1, 'Maagdarmklachten', 'Algeldraat en magnesiumzouten binden maagzuur. Dit maakt de maaginhoud minder zuur.', 20.02),
-(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99),
-(0, 'Young Gods', 'SwagGoo', 1, 'Grumpex a hoe', 'It be crazy', 952.52);
+(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99);
 
 -- --------------------------------------------------------
 
