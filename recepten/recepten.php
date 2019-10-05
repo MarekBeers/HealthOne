@@ -59,7 +59,7 @@
                 <tr>
                     <th scope="col" class="text-danger">Recept #</th>
                     <th scope="col" class="text-danger">Patient naam</th>
-                    <th scope="col" class="text-danger">Edit</th>
+                    <th scope="col" class="text-danger">Info</th>
                     
                 </tr>
                 </thead>

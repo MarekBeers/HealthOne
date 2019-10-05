@@ -61,7 +61,7 @@
                     <th scope="col" class="text-danger">Verzekeringnummer</th>
                     <th scope="col" class="text-danger">Naam</th>
                     <th scope="col" class="text-danger">Geboortedatum</th>
-                    <th scope="col" class="text-danger">Edit</th>
+                    <th scope="col" class="text-danger">Info</th>
                 </tr>
                 </thead>
                 <tbody id="myTable">
