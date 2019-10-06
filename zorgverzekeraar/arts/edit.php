@@ -30,9 +30,10 @@ catch(PDOException $e){
 if (isset($_POST['submit'])) {
     $name = filter_var($_POST['naam'], FILTER_SANITIZE_STRING);
     $adres = filter_var($_POST['adres'], FILTER_SANITIZE_STRING);
-    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
+    $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_STRING);
+    $specialisatie = filter_var($_POST['specialisatie'], FILTER_SANITIZE_STRING);
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("UPDATE arts SET naam='$name',adres='$adres',telefoon = '$telefoonnummer' WHERE id =" . $_GET['id']);
+    $query = $db->prepare("UPDATE arts SET naam='$name',adres='$adres',telefoon = '$telefoonnummer',specialisatie = '$specialisatie' WHERE id =" . $_GET['id']);
     $query->execute();
     echo($query->queryString);
     header('refresh:0;url=artsen_beheer.php');
@@ -84,8 +85,13 @@ if (isset($_POST['submit'])) {
         <label for="Telefoonnummer">Telefoonnummer</label>
         <input type="text" class="form-control" name="telefoonnummer" id="telefoonnummer"
             value="<?php echo $data['telefoon']?>">
-
     </div>
+    <div class="form-group">
+        <label for="Specialisatie">Specialisatie</label>
+        <input type="text" class="form-control" name="specialisatie" id="specialisatie"
+            value="<?php echo $data['specialisatie']?>">
+    </div>
+    
     <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
     </form>
 
