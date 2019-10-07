@@ -44,7 +44,7 @@
         </nav>
         <div class="row text-center">
             <div class="col-sm-4">
-                <a href="huisarts/patienten.php">
+                <a href="huisarts/index.php">
                     <img class="img-fluid" src="img/doctor.png">
                     <h3 class="text-danger">Doctor</h3>
                     <p>De docter kan uw gegevens inzien en aan passen en toevoegen.</p>
