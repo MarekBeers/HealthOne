@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 okt 2019 om 19:21
+-- Gegenereerd op: 07 okt 2019 om 11:32
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -168,6 +168,18 @@ INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `patient_notities`
+--
+
+CREATE TABLE `patient_notities` (
+  `patient_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `notities` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `recept`
 --
 
@@ -178,13 +190,20 @@ CREATE TABLE `recept` (
   `herhalingsrecept` tinyint(4) DEFAULT NULL,
   `medicijn_id` int(11) UNSIGNED NOT NULL,
   `commentaar` text NOT NULL,
-  `datum` text NOT NULL
+  `datum` text NOT NULL,
+  `afgehandeld` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `recept`
 --
 
+INSERT INTO `recept` (`recept_id`, `patient_id`, `dosis`, `herhalingsrecept`, `medicijn_id`, `commentaar`, `datum`, `afgehandeld`) VALUES
+(6, 81, '3', 0, 25, 'jhg', '07-10-2019 09:33', 1),
+(7, 81, '45', 1, 25, '', '07-10-2019 10:16', 1),
+(8, 81, '675ml', 0, 28, 'j', '07-10-2019 10:17', 1),
+(9, 81, 'yuh', 1, 27, 'perhaps', '07-10-2019 10:30', 1),
+(10, 81, '675ml', 0, 25, '', '07-10-2019 11:30', 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -195,6 +214,12 @@ CREATE TABLE `recept` (
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`patient_id`,`arts_id`);
+
+--
+-- Indexen voor tabel `patient_notities`
+--
+ALTER TABLE `patient_notities`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `recept`
@@ -213,10 +238,16 @@ ALTER TABLE `patient`
   MODIFY `patient_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
+-- AUTO_INCREMENT voor een tabel `patient_notities`
+--
+ALTER TABLE `patient_notities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT voor een tabel `recept`
 --
 ALTER TABLE `recept`
-  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

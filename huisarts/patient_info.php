@@ -113,7 +113,7 @@
         $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
         foreach ($result2 as &$data) {
             echo "<tr>";
-            echo "<td>" . $data['notities'] . "</td>";
+            echo "<td><textarea class='form-control' readonly>" . $data['notities'] . "</textarea></td>";
             echo "</tr>";
 
             echo "<td><a href='edit_notitie.php?id=".$data['id']."'>"."<button  type=\"submit\" name=\"submit\"  class=\"btn btn-warning\">Edit</button></a>";

@@ -12,61 +12,110 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron text-center" ">
-    <div class="row">
-        <div class="col-sm-3">
-            <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
-            <img class="d-block d-sm-none img-fluid" src="../img/placeholder.png" alt="Logo">
+    <div class="jumbotron text-center">
+        <div class="row">
+            <div class="col-sm-3">
+                <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
+                <img class="d-block d-sm-none img-fluid" src="../img/placeholder.png" alt="Logo">
+            </div>
         </div>
     </div>
-</div>
-<nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="../index.php">
-        <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
-    </a>
-    <div class="collapse navbar-collapse" id="collapse_target">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inloggen</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../contact.php">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="row text-center">
-    <div class="col-sm-4">
-        <a href="../contact.php">
-            <h3 class="text-danger">Patienten</h3>
-            <p>Hier kunt patienten inzien.</p>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="../index.php">
+            <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
         </a>
-    </div>
-    <div class="col-sm-4">
-        <a href="../contact.php">
-            <h3 class="text-danger">Recepten</h3>
-            <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
-        </a>
-    </div>
-    <div class="col-sm-4">
-        <a href="../contact.php">
-            <h3 class="text-danger">Medicijnen</h3>
-            <p>Hier kunt u een lijst met medicijnen inzien die kunnen worden voorgeschreven aan de patient.</p>
-        </a>
-    </div>
-</div>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php">Home</a>
+                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inloggen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact.php">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-</div>
-    <footer class="py-4 bg-light text-dark-50 text-center">
+    <div class="row text-center">
+        <div class="col-lg-2">
+            <input  class="form-control form-control-underlined border-danger" id="myInput" type="text" placeholder="Vul gegevens in">
+        </div>
+
+        <div class="col-lg-10">
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col" class="text-danger">#</th>
+                <th scope="col" class="text-danger">Medicijn</th>
+                <th scope="col" class="text-danger">Ontvanger</th>
+                <th scope="col" class="text-danger">Uitschrijf datum</th>
+                <th scope="col" class="text-danger">Afhandeling</th>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+            <?php
+
+            try {
+                $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
+                $query = $db->prepare("SELECT * FROM recept WHERE afgehandeld = 0 ");
+                $query->execute();
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($result as &$data){
+                    $id = $data['patient_id'];
+                    $medicijn_id = $data['medicijn_id'];
+                    $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id");
+                    $query2->execute();
+                    $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+                    echo "<tr>";
+                    echo "<td>".$data['recept_id']."</td>";
+                    foreach ($result2 as &$data2) {
+
+                        $query3 = $db->prepare("SELECT * FROM medicijn WHERE id = $medicijn_id");
+                        $query3->execute();
+                        $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+                        foreach ($result3 as &$data3) {
+                            echo "<td>".$data3['naam'] ."</td>";
+                        }
+                        echo "<td>".$data2['naam'] ."</td>";
+                    }
+                    echo "<td>".$data['datum']."</td>";
+                    echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' <button type='submit' name='submit' class='btn btn-info'>Afgehandeld</button></td>";
+                    echo "</tr>";
+                }
+            }
+            catch(PDOException $e){
+                die("OEPS iets is fout!".$e->getMessage());
+            }
+            ?>
+            </tbody>
+        </table>
+
+    </div>
+
+    <footer class="py-4 bg-light text-dark-50 text-center fixed-bottom">
         <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
     </footer>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
