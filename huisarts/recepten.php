@@ -59,6 +59,7 @@
                 <tr>
                     <th scope="col" class="text-danger">Recept #</th>
                     <th scope="col" class="text-danger">Patient naam</th>
+                    <th scope="col" class="text-danger">Datum</th>
                     <th scope="col" class="text-danger">Info</th>
                     
                 </tr>
@@ -80,6 +81,7 @@
                         foreach ($result2 as &$data2) {
                             echo "<td>".$data2['naam'] ."</td>";
                         }
+                        echo "<td>".$data['datum']."</td>";
                         echo "<td><a href='recept_info.php?id=".$data['recept_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
                         echo "</tr>";
                     }

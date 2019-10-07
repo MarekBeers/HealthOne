@@ -80,6 +80,7 @@
                         foreach ($result2 as &$data2) {
                             echo "<td>".$data2['naam'] ."</td>";
                         }
+                        echo "<td>".$data['datum']."</td>";
                         echo "<td><a href='recept_info.php?id=".$data['recept_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
                         echo "</tr>";
                     }
