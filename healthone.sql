@@ -161,10 +161,7 @@ INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum
 (117, 'Alameda Clewett', 'aclewett10@fc2.com', '643214859', '2019-07-13', '36 Forest Dale Junction', 71038, 0),
 (118, 'Bernice Whisson', 'bwhisson11@parallels.com', '831454036', '2019-02-09', '21590 Emmet Road', 23622, 0),
 (119, 'Jermaine Bacher', 'jbacher12@meetup.com', '623934899', '2019-05-04', '15 Acker Drive', 81297, 0),
-(120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0),
-(121, 'abcdefe', 'hc-boy@hotmail.nl', '687407798', '2019-09-09', 'Plantenoord, 214', 21474836, 0),
-(122, 'Geezer Acbre', 'hc-boy@hotmail.nl', '687407798', '2019-09-27', 'Plantenoord, 214', 12355523, 0);
-
+(120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0);
 -- --------------------------------------------------------
 
 --
@@ -213,7 +210,7 @@ INSERT INTO `recept` (`recept_id`, `patient_id`, `dosis`, `herhalingsrecept`, `m
 -- Indexen voor tabel `patient`
 --
 ALTER TABLE `patient`
-  ADD PRIMARY KEY (`patient_id`,`arts_id`);
+  ADD PRIMARY KEY (`patient_id`);
 
 --
 -- Indexen voor tabel `patient_notities`
