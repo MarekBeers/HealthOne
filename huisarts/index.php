@@ -45,21 +45,18 @@
 <div class="row text-center">
     <div class="col-sm-4">
         <a href="patienten.php">
-            <img class="img-fluid" src="../img/doctor.png">
             <h3 class="text-danger">Patienten</h3>
             <p>Hier kunt patienten gegevens toevoegen, inzien, bewerken, en verwijderen.</p>
         </a>
     </div>
     <div class="col-sm-4">
         <a href="../contact.php">
-            <img class="img-fluid" src="../img/apotheker.png">
             <h3 class="text-danger">Recepten</h3>
             <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
         </a>
     </div>
     <div class="col-sm-4">
         <a href="../huisarts/medicijn.php">
-            <img class="img-fluid" src="../img/verzekeraar.png">
             <h3 class="text-danger">Medicijnen</h3>
             <p>Hier kunt u de medicijnenlijst bekijken.</p>
         </a>
