@@ -5,6 +5,7 @@ if($_SESSION['functie'] != $functie) {
     header('Location: ../401.php');
 };
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
