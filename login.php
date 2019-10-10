@@ -52,6 +52,11 @@ session_start();
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <?php
+                        if(isset($_SESSION['functie'])) {
+                            echo "<h1 class='text-center'>U bent al ingelogd.</h1>";
+                        } else {
+                        echo '
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label for="username">Gebruikersnaam</label>
@@ -61,14 +66,13 @@ session_start();
                                 <label for="password">Wachtwoord</label>
                                 <input id="password" type="password" class="form-control" name="password">
                             </div>
-                            <button class='btn btn-primary' type="submit" name="submit">Login</button>
+                            <button class="btn btn-primary" type="submit" name="submit">Login</button>
                         </form>
                     </div>
+                    '; }
+                    ?>
                 </div>
                     <?php 
-                    if(isset($_SESSION['functie'])) {
-                        echo "<h1>Je bent al ingelogd.</h1>";
-                    }
                         if (isset($_POST['submit'])) {
                             try {
                             $username = $_POST['username'];
