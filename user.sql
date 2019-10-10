@@ -41,7 +41,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `functie`, `functie_id`) VALUES
-(1, 'younggods', '14abcb3d9b877e76a9c361b6b7a0d75f17d06a0f\r\n', 'arts', 0),
+(1, 'younggods', '14abcb3d9b877e76a9c361b6b7a0d75f17d06a0f', 'arts', 0),
 (5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker', 0);
 
 --
