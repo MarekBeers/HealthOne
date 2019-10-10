@@ -51,7 +51,7 @@ session_start();
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <?php
-                    if(isset($_SESSIOn['functie'])) {
+                    if(isset($_SESSION['functie'])) {
                     echo '<li class="nav-item">
                     <a class="nav-link" href="#">Ingelogd als: ' . $_SESSION['functie'] .'</a></li>';                        
                 }
