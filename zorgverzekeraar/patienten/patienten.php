@@ -1,3 +1,10 @@
+<?php
+session_start();
+$functie = "verzekeringsmedewerker";
+if($_SESSION['functie'] != $functie) {
+    header('Location: ../401.php');
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

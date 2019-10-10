@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$functie = "apotheker";
+if($_SESSION['functie'] != $functie) {
+    header('Location: ../401.php');
+};
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
