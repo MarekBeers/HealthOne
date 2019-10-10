@@ -72,7 +72,7 @@ session_start();
                         if (isset($_POST['submit'])) {
                             try {
                             $username = $_POST['username'];
-                            $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+                            $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
                             // echo $username;
                             $query = $db->prepare("SELECT functie from user WHERE username = '$username' AND password = '$password'");
