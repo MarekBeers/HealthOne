@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 10 okt 2019 om 16:31
+-- Gegenereerd op: 11 okt 2019 om 00:17
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -41,7 +41,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `functie`, `functie_id`) VALUES
-(5, 'abc', 'def', 'apotheker', 0);
+(1, 'younggods', '14abcb3d9b877e76a9c361b6b7a0d75f17d06a0f\r\n', 'arts', 0),
+(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker', 0);
 
 --
 -- Indexen voor geëxporteerde tabellen
