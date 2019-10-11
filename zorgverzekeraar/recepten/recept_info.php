@@ -19,7 +19,7 @@ if($_SESSION['functie'] != $functie) {
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron text-center" ">
+    <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-3">
             <img class="d-none d-sm-block img-fluid" src="../../img/healthtwo_text_transparent.png" alt="Logo">
@@ -57,6 +57,7 @@ if($_SESSION['functie'] != $functie) {
                 <th class="text-danger">Recept #</th>
                 <th class="text-danger">Patient naam</th>
                 <th class="text-danger">Medicijn</th>
+                <th class="text-danger">Dosis</th>
                 <th class="text-danger">Datum van uitgave</th>
                 <th class="text-danger">Arts</th>
             </tr>
@@ -66,10 +67,12 @@ if($_SESSION['functie'] != $functie) {
             try {
                     $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
                     $recept_id = $_GET['id'];
+                    $dosis = 0;
                     $query = $db->prepare("SELECT * FROM recept WHERE recept_id = $recept_id");
                     $query->execute();
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as &$data){
+                        $dosis = $data['dosis'];
                         $id = $data['patient_id'];
                         $medicijn_id = $data['medicijn_id'];
                         $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id");
@@ -86,6 +89,7 @@ if($_SESSION['functie'] != $functie) {
                                 echo "<td>".$data3['naam'] ."</td>";
                             }
                         }
+                        echo "<td>".$dosis."</td>";
                         echo "<td>".$data['datum']."</td>";
                         echo "<td><a href='recept_info.php?id=".$data['recept_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
                         echo "</tr>";

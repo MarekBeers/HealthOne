@@ -30,16 +30,16 @@ if (isset($_POST['submit'])) {
     // <option value="2">Verzekeringsmedewerker</option>
     switch($functie) {
         case 0:
-        $functie = 'arts';
-        break;
+            $functie = 'arts';
+            break;
         case 1:
-        $functie = 'apotheker';
-        break;
+            $functie = 'apotheker';
+            break;
         case 2:
-        $functie = 'verzekeringsmedewerker';
-        break;
+            $functie = 'verzekeringsmedewerker';
+            break;
         default:
-        exit(-1);
+            exit(-1);
     }
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
 

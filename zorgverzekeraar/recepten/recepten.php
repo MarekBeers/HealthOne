@@ -66,6 +66,7 @@ if($_SESSION['functie'] != $functie) {
                 <tr>
                     <th scope="col" class="text-danger">Recept #</th>
                     <th scope="col" class="text-danger">Patient naam</th>
+                    <th scope="col" class="text-danger">Datum van uitgave</th>
                     <th scope="col" class="text-danger">Info</th>
                     
                 </tr>
