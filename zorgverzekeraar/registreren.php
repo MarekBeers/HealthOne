@@ -20,9 +20,38 @@ if($_SESSION['functie'] != $functie) {
 </head>
 
 <body>
+    <?php
+if (isset($_POST['submit'])) {
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_EMAIL));
+    $functie = filter_var($_POST['functie'], FILTER_SANITIZE_NUMBER_INT);
+    // <option value="0">Arts</option>
+    // <option value="1">Apotheker</option>
+    // <option value="2">Verzekeringsmedewerker</option>
+    switch($functie) {
+        case 0:
+        $functie = 'arts';
+        break;
+        case 1:
+        $functie = 'apotheker';
+        break;
+        case 2:
+        $functie = 'verzekeringsmedewerker';
+        break;
+        default:
+        exit(-1);
+    }
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+
+    $query = $db->prepare("INSERT INTO user (username, password, functie) VALUES ('$username', '$password', '$functie')");
+    $query->execute();
+    // echo($query->queryString);
+    header('refresh:1;url=../index.php');
+}
+?>
     <div class="container">
         <div class="jumbotron text-center">
-            <div class="row">
+            <div class=" row">
                 <div class="col-sm-3">
                     <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
                     <img class="d-block d-sm-none img-fluid" src="../img/placeholder.png" alt="Logo">
@@ -33,7 +62,7 @@ if($_SESSION['functie'] != $functie) {
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
@@ -51,43 +80,33 @@ if($_SESSION['functie'] != $functie) {
                 </ul>
             </div>
         </nav>
-        <div class="row text-center">
-            <div class="col-sm-4">
-                <a href="patienten/patienten.php">
-                    <h3 class="text-danger">Patienten</h3>
-                    <p>Hier kunt u patienten gegevens toevoegen, inzien, bewerken, en verwijderen.</p>
-                </a>
+        <form method="POST">
+            <div class="form-group">
+                <label for="Naam">Gebruikersnaam</label>
+                <input type="text" class="form-control" name="username" id="naam" value="">
             </div>
-            <div class="col-sm-4">
-                <a href="recepten/recepten.php">
-                    <h3 class="text-danger">Recepten</h3>
-                    <p>Kan recepten inzien die de doctor heeft voorgeschreven.</p>
-                </a>
+            <div class="form-group">
+                <label for="wachtwoord">Wachtwoord</label>
+                <input type="password" class="form-control" name="password" id="wachtwoord" value="">
+
             </div>
-            <div class="col-sm-4">
-                <a href="arts/artsen_beheer.php">
-                    <h3 class="text-danger">Huisartsen en Apothekers</h3>
-                    <p>Hier kunt u apothekers en huisartsen toevoegen, inzien, bewerken, en verwijderen.</p>
-                </a>
+            <div class="form-group">
+                <label for="Functie">Functie</label>
+                <select name="functie" id="functie" class="form-control">
+                <option value="0">Arts</option>
+                <option value="1">Apotheker</option>
+                <option value="2">Verzekeringsmedewerker</option>
+                </select>
+
             </div>
-            <div class="col-sm-6">
-                <a href="medicijnen/overzicht.php">
-                    <h3 class="text-danger">Medicijnen</h3>
-                    <p>Hier kunt u de medicijnen inzien en toevoegen.</p>
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <a href="registreren.php">
-                    <h3 class="text-danger">Registreer gebruiker</h3>
-                    <p>Hier kunt u een nieuwe gebruikers registreren.</p>
-                </a>
-            </div>
-        </div>
-        <footer class="py-4 bg-light text-dark-50 text-center">
-            <small>Copyright <em class="text-danger"> &copy; </em>Zilverenkruis</small>
-        </footer>
+            <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
+        </form>
+
 
     </div>
+    <footer class="py-4 bg-light text-dark-50 text-center">
+        <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+    </footer>
 </body>
 
 </html>
