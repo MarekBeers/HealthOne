@@ -43,7 +43,10 @@ if (isset($_POST['submit'])) {
     }
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
 
-    $query = $db->prepare("INSERT INTO user (username, password, functie) VALUES ('$username', '$password', '$functie')");
+    $query = $db->prepare('INSERT INTO user (username, password, functie) VALUES (:username, :password, :functie)');
+    $query->bindParam(":username", $username, PDO::PARAM_STR);
+    $query->bindParam(":password", $password, PDO::PARAM_STR);
+    $query->bindParam(":functie", $functie, PDO::PARAM_STR);
     $query->execute();
     // echo($query->queryString);
     header('refresh:1;url=../index.php');
