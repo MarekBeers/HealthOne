@@ -37,10 +37,15 @@ session_start();
                     <li class="nav-item active">
                         <a class="nav-link text-danger" href="index.php">Home</a>
                     </li>
-
-                    <li class="nav-item">
+                    <?php
+                    if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {
+                        // print_r($_SESSION);
+                        echo '
+                        <li class="nav-item">
                         <a class="nav-link" href="login.php">Inloggen</a>
-                    </li>
+                        </li>';
+                    }
+                    ?>
                     <?php 
                     if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
                         echo '<li class="nav-item"><a class="nav-link" href="uitloggen.php">Uitloggen</a></li>';

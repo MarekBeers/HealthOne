@@ -23,7 +23,8 @@ if($_SESSION['functie'] != $functie) {
     <?php
 try {
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                $query = $db->prepare("SELECT * from patient WHERE patient_id = " . $_GET['id']);
+    $query = $db->prepare("SELECT * from patient WHERE patient_id = :id");
+    $query->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach ($result as &$data) {
@@ -50,7 +51,14 @@ if (isset($_POST['submit'])) {
 //    echo "Phone Number: " . $telefoonnummer;
 //    echo "Verz. Nummer: " . $verzekeringnummer;
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("UPDATE patient SET naam='$name',email='$email',adres='$adres',telefoon = '$telefoonnummer', geboortedatum='$geboortedatum',verzekeringnummer= $verzekeringnummer WHERE patient_id =" . $_GET['id']);
+    $query = $db->prepare('UPDATE patient SET naam=:name,email=:email,adres=:adres,telefoon = :telefoon, geboortedatum=:geboortedatum,verzekeringnummer= :verznummer WHERE patient_id = :id');
+    $query->bindParam(":name", $name, PDO::PARAM_STR);
+    $query->bindParam(":email", $email, PDO::PARAM_STR);
+    $query->bindParam(":adres", $adres, PDO::PARAM_STR);
+    $query->bindParam(":telefoon", $telefoonnummer, PDO::PARAM_STR);
+    $query->bindParam(":geboortedatum", $geboortedatum, PDO::PARAM_STR);
+    $query->bindParam(":verznummer", $verzekeringnummer, PDO::PARAM_INT);
+    $query->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
     $query->execute();
     echo($query->queryString);
     header('refresh:0;url=patienten.php');

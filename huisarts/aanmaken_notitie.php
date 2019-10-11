@@ -66,8 +66,13 @@ if($_SESSION['functie'] != $functie) {
 
             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
 
-            $query = $db->prepare("INSERT INTO patient_notities (patient_id,notities) VALUES ('$_GET[id]','$notitie');");
+            $query = $db->prepare('INSERT INTO patient_notities (patient_id,notities) VALUES (:id, :notitie);');
+
+            $id = $_GET['id'];
+            $query->bindParam(':id', $id, PDO::PARAM_INT);
+            $query->bindParam(':notitie', $notitie, PDO::PARAM_STR);
             $query->execute();
+            // echo $query->queryString; (PARAMETERS ZIJN NIET HETZELFDE IN DE QUERY STRING!);
             header("Location: patient_info.php?id=" . $_GET['id']);
 
         }

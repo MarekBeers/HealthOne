@@ -83,9 +83,13 @@ session_start();
                             try {
                             $username = $_POST['username'];
                             $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
+
+
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
                             // echo $username;
-                            $query = $db->prepare("SELECT functie from user WHERE username = '$username' AND password = '$password'");
+                            $query = $db->prepare('SELECT functie from user WHERE username = :username AND password = :password');
+                            $query->bindParam(':username', $username);
+                            $query->bindParam(':password', $password);
                             $query->execute();
                             // echo $query->queryString;
                             $result = $query->fetchAll(PDO::FETCH_ASSOC);

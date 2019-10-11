@@ -34,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inloggen</a>
+                    <a class="nav-link" href="login.php">Inloggen</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link text-danger" href="contact.php">Contact</a>

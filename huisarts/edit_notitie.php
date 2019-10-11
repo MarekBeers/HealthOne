@@ -55,8 +55,8 @@ if($_SESSION['functie'] != $functie) {
         <textarea class="form-control" rows="15" name="notitie" type="notitie" id="notitie" required ><?php
             try {
                 $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
-                $query = $db->prepare("SELECT * FROM patient_notities WHERE id = " . $_GET['id']);
-
+                $query = $db->prepare("SELECT * FROM patient_notities WHERE id = :id");
+                $query->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
                 $query->execute();
 
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -84,14 +84,16 @@ if($_SESSION['functie'] != $functie) {
 
             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
 
-            $query2 = $db->prepare("SELECT * FROM patient_notities WHERE id = " . $_GET['id']);
+            $query2 = $db->prepare("SELECT * FROM patient_notities WHERE id = :id");
+            $query2->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
             $query2->execute();
             $result = $query2->fetchAll(PDO::FETCH_ASSOC);
             foreach ($result as &$data) {
 
             }
 
-            $query = $db->prepare("UPDATE patient_notities SET notities='$notitie' WHERE id =" . $_GET['id']);
+            $query = $db->prepare("UPDATE patient_notities SET notities='$notitie' WHERE id = :id");
+            $query->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
             $query->execute();
 
             header("Location: patient_info.php?id=" . $data['patient_id']);

@@ -74,20 +74,20 @@ if($_SESSION['functie'] != $functie) {
 
             try {
                 $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
-                $query = $db->prepare("SELECT * FROM recept WHERE afgehandeld = 0 ");
+                $query = $db->prepare("SELECT * FROM recept WHERE afgehandeld = 0"); // Kan geen SQL-injectie optreden.
                 $query->execute();
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($result as &$data){
                     $id = $data['patient_id'];
                     $medicijn_id = $data['medicijn_id'];
-                    $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id");
+                    $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id"); // Kan geen SQL-inectie optreden.
                     $query2->execute();
                     $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                     echo "<tr>";
                     echo "<td>".$data['recept_id']."</td>";
                     foreach ($result2 as &$data2) {
 
-                        $query3 = $db->prepare("SELECT * FROM medicijn WHERE id = $medicijn_id");
+                        $query3 = $db->prepare("SELECT * FROM medicijn WHERE id = $medicijn_id"); // Kan geen SQL-injectie optreden.
                         $query3->execute();
                         $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($result3 as &$data3) {
