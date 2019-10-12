@@ -63,7 +63,7 @@ session_start();
                             echo "<h1 class='text-center'>U bent al ingelogd.</h1>";
                         } else {
                         echo '
-                        <form action="" method="POST">
+                        <form method="POST">
                             <div class="form-group">
                                 <label for="username">Gebruikersnaam</label>
                                 <input id="gebruikersnaam" type="text" class="form-control" name="username">
