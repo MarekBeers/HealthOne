@@ -71,9 +71,9 @@ if($_SESSION['functie'] != $functie) {
             <div class="col-lg-2">
                 <input  class="form-control form-control-underlined border-danger" id="myInput" type="text" placeholder="Vul gegevens in">
             </div>
-            <a href="patient_aanmaken_index.php">
+            <!-- <a href="patient_aanmaken_index.php">
             <button class="btn btn-success" type="button">Toevoegen</button>
-            </a>
+            </a> -->
             <div class="col-lg-10">
             </div>
         </div>
@@ -112,9 +112,11 @@ if($_SESSION['functie'] != $functie) {
                 ?>
                 </tbody>
             </table>
-
+        <footer class="py-4 bg-light text-dark-50 text-center">
+            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
+        </footer>
+            
         </div>
-
 
         </div>
         <script>
@@ -127,8 +129,6 @@ if($_SESSION['functie'] != $functie) {
                 });
             });
         </script>
-        <footer class="py-4 bg-light text-dark-50 text-center fixed-bottom">
-            <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
-        </footer>
     </body>
+
 </html>

@@ -19,8 +19,7 @@ if($_SESSION['functie'] != $functie) {
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron text-center"
-    ">
+    <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-3">
             <img class="d-none d-sm-block img-fluid" src="../../img/healthtwo_text_transparent.png" alt="Logo">
@@ -32,7 +31,7 @@ if($_SESSION['functie'] != $functie) {
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="..../index.php">
+    <a class="navbar-brand" href="../../index.php">
         <img class="navbrand" src="../../img/healthtwo_logo_transparent.png" alt="Logo">
     </a>
     <div class="collapse navbar-collapse" id="collapse_target">

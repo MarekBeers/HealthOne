@@ -52,7 +52,7 @@ if($_SESSION['functie'] != $functie) {
                     ?>
                     <?php 
                     if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
-                        echo '<li class="nav-item"><a class="nav-link" href="uitloggen.php">Uitloggen</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="../uitloggen.php">Uitloggen</a></li>';
                     }
                     // print_r($_SESSION);
                     ?>
