@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link text-danger" href="index.php">Home</a>
+                        <a class="nav-link text-danger" href="../index.php">Home</a>
                     </li>
                     <?php
                     if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {
@@ -84,12 +84,12 @@ if (isset($_POST['submit'])) {
                     ?>
                     <?php 
                     if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
-                        echo '<li class="nav-item"><a class="nav-link" href="uitloggen.php">Uitloggen</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="../uitloggen.php">Uitloggen</a></li>';
                     }
                     // print_r($_SESSION);
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
+                        <a class="nav-link" href="../contact.php">Contact</a>
                     </li>
                     <?php
                     if(isset($_SESSION['functie'])) {

@@ -55,7 +55,7 @@ if($_SESSION['functie'] != $functie) {
                 // print_r($_SESSION);
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact.php">Contact</a>
+                    <a class="nav-link" href="../../contact.php">Contact</a>
                 </li>
                 <?php
                 if(isset($_SESSION['functie'])) {

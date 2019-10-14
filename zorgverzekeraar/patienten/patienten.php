@@ -50,12 +50,12 @@ if($_SESSION['functie'] != $functie) {
                         ?>
                         <?php
                         if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
-                            echo '<li class="nav-item"><a class="nav-link" href="../uitloggen.php">Uitloggen</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="../../uitloggen.php">Uitloggen</a></li>';
                         }
                         // print_r($_SESSION);
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="../contact.php">Contact</a>
+                            <a class="nav-link" href="../../contact.php">Contact</a>
                         </li>
                         <?php
                         if(isset($_SESSION['functie'])) {
@@ -73,8 +73,7 @@ if($_SESSION['functie'] != $functie) {
             <div class="col-lg-8">
             </div>
             <div class="col-lg-2">
-                <a href="patient_aanmaken/index.php" type="button" class="btn btn-success">Patient aanmaken</a>
-
+            <a href="patient_aanmaken/index.php"><button type="button" class="btn btn-success">Patient aanmaken</button></a>
             </div>
         </div>
         <div class="table-responsive">
