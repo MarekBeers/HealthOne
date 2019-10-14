@@ -117,7 +117,6 @@ if (isset($_POST['submit'])) {
                 <option value="1">Apotheker</option>
                 <option value="2">Verzekeringsmedewerker</option>
                 </select>
-
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
         </form>
