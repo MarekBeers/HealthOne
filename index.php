@@ -99,7 +99,7 @@ session_start();
                 }
             } else {
                 // echo ('<p style="text-align: center">Log in om het selectiescherm te bekijken.</p>');
-                header("refresh:0;url=login.php");
+                header("Location: login.php");
             }
             ?>
         </div>

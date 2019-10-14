@@ -13,7 +13,7 @@
     <h1 style="text-align: center">401 - Toegang geweigerd.</h1>
     <p style="text-align: center">U heeft niet de juiste bevoegdheden om deze pagina te bekijken, u wordt over 2 seconden teruggestuurd naar de hoofdpagina.</p>
     <?php
-    header("refresh:2;url=./index.php");
+    header("Location: ./index.php");
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

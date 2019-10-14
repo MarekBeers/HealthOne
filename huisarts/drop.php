@@ -5,4 +5,4 @@
     $query->execute();
 //    echo($query->queryString);
     echo("Patient verwijderd.");
-    header('refresh:0;url=patienten.php');
+    header('Location: patienten.php');

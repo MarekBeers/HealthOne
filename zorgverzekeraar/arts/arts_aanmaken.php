@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare("insert into arts (naam, adres, telefoon, specialisatie) values ('$name', '$adres','$telefoonnummer', '$specialisatie');");
     $query->execute();
 //    echo($query->queryString);
-    header('refresh:0;url=artsen_beheer.php');
+    header('Location: artsen_beheer.php');
 }
 ?>
 <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">

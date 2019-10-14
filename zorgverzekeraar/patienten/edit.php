@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
     $query->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
     $query->execute();
     echo($query->queryString);
-    header('refresh:0;url=patienten.php');
+    header('Location: patienten.php');
 }
 ?>
     <div class="container">

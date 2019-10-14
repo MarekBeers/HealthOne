@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     $query->bindParam(":functie", $functie, PDO::PARAM_STR);
     $query->execute();
     // echo($query->queryString);
-    header('refresh:1;url=../index.php');
+    header('Location: ../index.php');
 }
 ?>
     <div class="container">
