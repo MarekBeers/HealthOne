@@ -98,7 +98,7 @@ session_start();
                                 $_SESSION['functie'] = $data['functie'];
                                 switch($data['functie']) {
                                     case 'arts':
-                                    header("Location: huisarts/patienten.php");
+                                    header("Location: huisarts/index.php");
                                     break;
                                     case 'verzekeringsmedewerker':
                                     header("Location: zorgverzekeraar/verzekeraar_index.php");
