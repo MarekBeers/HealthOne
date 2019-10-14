@@ -31,13 +31,13 @@ if($_SESSION['functie'] != $functie) {
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="verzekeraar_index.php">
+            <a class="navbar-brand" href="../verzekeraar_index.php">
                 <img class="navbrand" src="../../img/healthtwo_logo_transparent.png" alt="Logo">
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link text-danger" href="index.php">Home</a>
+                        <a class="nav-link text-danger" href="../index.php">Home</a>
                     </li>
                     <?php
                     if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {
