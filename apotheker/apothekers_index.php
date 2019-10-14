@@ -19,7 +19,7 @@ if($_SESSION['functie'] != $functie) {
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron text-center" ">
+    <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-3">
             <img class="d-none d-sm-block img-fluid" src="../img/healthtwo_text_transparent.png" alt="Logo">
@@ -28,27 +28,44 @@ if($_SESSION['functie'] != $functie) {
     </div>
 </div>
 <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="../index.php">
-        <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
-    </a>
-    <div class="collapse navbar-collapse" id="collapse_target">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inloggen</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../contact.php">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
+            </a>
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-danger" href="index.php">Home</a>
+                    </li>
+                    <?php
+                    if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {
+                        // print_r($_SESSION);
+                        echo '
+                        <li class="nav-item">
+                        <a class="nav-link" href="login.php">Inloggen</a>
+                        </li>';
+                    }
+                    ?>
+                    <?php 
+                    if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
+                        echo '<li class="nav-item"><a class="nav-link" href="uitloggen.php">Uitloggen</a></li>';
+                    }
+                    // print_r($_SESSION);
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    <?php
+                    if(isset($_SESSION['functie'])) {
+                    echo '<li class="nav-item">
+                    <a class="nav-link" href="#">Ingelogd als: ' . $_SESSION['functie'] .'</a></li>';                        
+                }
+                ?>
+                </ul>
+            </div>
+        </nav>
 <div class="row text-center">
     <div class="col-sm-4">
         <a href="../contact.php">
