@@ -76,7 +76,7 @@ if($_SESSION['functie'] != $functie) {
                 <th class="text-danger">Medicijn</th>
                 <th class="text-danger">Dosis</th>
                 <th class="text-danger">Datum van uitgave</th>
-                <th class="text-danger">Arts</th>
+                <!-- <th class="text-danger">Arts</th> -->
             </tr>
         </thead>
         <tbody>
@@ -108,7 +108,7 @@ if($_SESSION['functie'] != $functie) {
                         }
                         echo "<td>".$dosis."</td>";
                         echo "<td>".$data['datum']."</td>";
-                        echo "<td><a href='recept_info.php?id=".$data['recept_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
+                        // echo "<td><a href='recept_info.php?id=".$data['recept_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
                         echo "</tr>";
                     }
                 }
