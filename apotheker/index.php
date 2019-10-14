@@ -44,18 +44,18 @@ if($_SESSION['functie'] != $functie) {
                         // print_r($_SESSION);
                         echo '
                         <li class="nav-item">
-                        <a class="nav-link" href="login.php">Inloggen</a>
+                        <a class="nav-link" href="../login.php">Inloggen</a>
                         </li>';
                     }
                     ?>
                     <?php 
                     if(isset($_SESSION['functie']) && $_SESSION['functie'] != null) {
-                        echo '<li class="nav-item"><a class="nav-link" href="uitloggen.php">Uitloggen</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="../uitloggen.php">Uitloggen</a></li>';
                     }
                     // print_r($_SESSION);
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
+                        <a class="nav-link" href="../contact.php">Contact</a>
                     </li>
                     <?php
                     if(isset($_SESSION['functie'])) {

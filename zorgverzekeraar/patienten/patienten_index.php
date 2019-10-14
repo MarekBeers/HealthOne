@@ -51,7 +51,7 @@ if($_SESSION['functie'] != $functie) {
 </nav>
 <div class="row text-center">
     <div class="col-sm-4">
-        <a href="patient_aanmaken/patient_aanmaken_index.php">
+        <a href="patient_aanmaken/index.php">
             <h3 class="text-danger">Patient aanmaken</h3>
             <p>Hier kunt u patienten toevoegen.</p>
         </a>

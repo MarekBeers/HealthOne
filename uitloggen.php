@@ -3,5 +3,5 @@ session_start();
 session_unset();
 session_destroy();
 echo "Sessie variables verwijderd en sessie vernietigd.";
-header("refresh:1;url=index.php");
+header("refresh:0;url=index.php");
 ?>

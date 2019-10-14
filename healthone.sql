@@ -164,22 +164,15 @@ INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum
 (120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0);
 -- --------------------------------------------------------
 
+--
+-- Tabelstructuur voor tabel `patient_notities`
+--
+
 CREATE TABLE `patient_notities` (
   `patient_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `notities` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-
--- Indexen voor tabel `patient_notities`
---
-ALTER TABLE `patient_notities`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `patient_notities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
 
 -- --------------------------------------------------------
 

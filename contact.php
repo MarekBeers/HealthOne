@@ -36,7 +36,6 @@ session_start();
                         <a class="nav-link text-danger" href="index.php">Home</a>
                     </li>
                     <?php
-                    error_reporting(0);
                     if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {
                         // print_r($_SESSION);
                         echo '
