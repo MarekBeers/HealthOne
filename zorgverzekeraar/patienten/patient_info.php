@@ -120,38 +120,7 @@ if($_SESSION['functie'] != $functie) {
 
     </div>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th class="text-danger">Notities<br><a href="aanmaken_notitie.php?id=<?php echo $_GET['id']; ?>"><button  type="button" class="btn btn-success">aanmaken</button></a></th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        try {
-            $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
-            $query2 = $db->prepare("SELECT * FROM patient_notities WHERE patient_id = " . $_GET['id']);
-
-            $query2->execute();
-
-            $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($result2 as &$data) {
-                echo "<tr>";
-                echo "<td><textarea class='form-control' readonly>" . $data['notities'] . "</textarea></td>";
-                echo "</tr>";
-
-                echo "<td><a href='edit_notitie.php?id=".$data['id']."'>"."<button  type=\"submit\" name=\"submit\"  class=\"btn btn-warning\">Edit</button></a>";
-                echo "<a href='drop_notitie.php?id=".$data['id']."'>"."<button  type=\"submit\" name=\"submit\" class=\"btn btn-danger\">Delete</button></a></td>";
-            }
-        }
-        catch(PDOException $e){
-            die("wank".$e->getMessage());
-
-        }
-        ?>
-        </tbody>
-
-    </table>
+    
 
     <footer class="py-4 bg-light text-dark-50 text-center">
         <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
