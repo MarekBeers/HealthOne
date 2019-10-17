@@ -108,7 +108,6 @@ if (isset($_POST['submit'])) {
             <div class="form-group">
                 <label for="wachtwoord">Wachtwoord</label>
                 <input type="password" class="form-control" name="password" id="wachtwoord" value="">
-
             </div>
             <div class="form-group">
                 <label for="Functie">Functie</label>

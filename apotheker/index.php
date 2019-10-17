@@ -31,7 +31,7 @@ if($_SESSION['functie'] != $functie) {
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
@@ -91,13 +91,14 @@ if($_SESSION['functie'] != $functie) {
 
             try {
                 $db = new PDO("mysql:host=localhost;dbname=healthone","root","");
-                $query = $db->prepare("SELECT * FROM recept WHERE afgehandeld = 0"); // Kan geen SQL-injectie optreden.
+                $query = $db->prepare("SELECT * FROM recept"); // Kan geen SQL-injectie optreden.
                 $query->execute();
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($result as &$data){
                     $id = $data['patient_id'];
                     $medicijn_id = $data['medicijn_id'];
-                    $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id"); // Kan geen SQL-inectie optreden.
+                    $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = :id"); // Kan geen SQL-inectie optreden.
+                    $query2->bindParam(':id', $id, PDO::PARAM_INT);
                     $query2->execute();
                     $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                     echo "<tr>";
@@ -113,7 +114,9 @@ if($_SESSION['functie'] != $functie) {
                         echo "<td>".$data2['naam'] ."</td>";
                     }
                     echo "<td>".$data['datum']."</td>";
-                    echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' <button type='submit' name='submit' class='btn btn-info'>Afgehandeld</button></td>";
+                    if($data['afgehandeld']) echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' ><button type='submit' name='submit' class='btn btn-info'>Afgehandeld</button></td>";
+                    if(!$data['afgehandeld']) echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' ><button type='submit' name='submit' class='btn btn-success'>Niet Afgehandeld</button></td>";
+                    
                     echo "</tr>";
                 }
             }
