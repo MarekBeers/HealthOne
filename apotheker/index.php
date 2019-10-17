@@ -81,6 +81,7 @@ if($_SESSION['functie'] != $functie) {
             <tr>
                 <th scope="col" class="text-danger">#</th>
                 <th scope="col" class="text-danger">Medicijn</th>
+                <th scope="col" class="text-danger">Dosis</th>
                 <th scope="col" class="text-danger">Ontvanger</th>
                 <th scope="col" class="text-danger">Uitschrijf datum</th>
                 <th scope="col" class="text-danger">Afhandeling</th>
@@ -110,6 +111,7 @@ if($_SESSION['functie'] != $functie) {
                         $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($result3 as &$data3) {
                             echo "<td>".$data3['naam'] ."</td>";
+                            echo "<td>".$data['dosis'] ."</td>";
                         }
                         echo "<td>".$data2['naam'] ."</td>";
                     }
