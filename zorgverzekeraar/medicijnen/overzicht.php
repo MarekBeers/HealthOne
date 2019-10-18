@@ -37,7 +37,7 @@ if($_SESSION['functie'] != $functie) {
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link text-danger" href="../index.php">Home</a>
+                        <a class="nav-link text-danger" href="../../index.php">Home</a>
                     </li>
                     <?php
                     if(!isset($_SESSION['functie']) && !$_SESSION['functie'] != null) {

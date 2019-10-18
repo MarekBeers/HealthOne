@@ -22,8 +22,9 @@ if($_SESSION['functie'] != $functie) {
 <body>
     <?php
 if (isset($_POST['submit'])) {
-    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    if(strlen($_POST['password']) >= 8) {
+    // $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    if(strlen($_POST['password']) >= 8 && strlen(filter_var($_POST['username'], FILTER_SANITIZE_STRING) >= 8)) {
+        $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
         $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
     } else {
         echo "<p>Er is een probleem met de ingevoerde gebruikersnaam en/of wachtwoord </p>";
@@ -108,10 +109,12 @@ if (isset($_POST['submit'])) {
             <div class="form-group">
                 <label for="Naam">Gebruikersnaam</label>
                 <input type="text" class="form-control" name="username" id="naam" value="" minlength=8>
+                <small>Minimaal 8 karakters.</small>
             </div>
             <div class="form-group">
                 <label for="wachtwoord">Wachtwoord</label>
                 <input type="password" class="form-control" name="password" id="wachtwoord" value="" minlength=8>
+                <small>Minimaal 8 karakters.</small>
             </div>
             <div class="form-group">
                 <label for="Functie">Functie</label>
@@ -123,8 +126,6 @@ if (isset($_POST['submit'])) {
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>
         </form>
-
-
     </div>
     <footer class="py-4 bg-light text-dark-50 text-center">
         <small>Copyright <em class="text-danger"> &copy; </em>Zilveren Kruis</small>
