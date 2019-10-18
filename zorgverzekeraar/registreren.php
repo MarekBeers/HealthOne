@@ -23,11 +23,15 @@ if($_SESSION['functie'] != $functie) {
     <?php
 if (isset($_POST['submit'])) {
     $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_EMAIL));
-    $functie = filter_var($_POST['functie'], FILTER_SANITIZE_NUMBER_INT);
-    // <option value="0">Arts</option>
-    // <option value="1">Apotheker</option>
-    // <option value="2">Verzekeringsmedewerker</option>
+    if(strlen($_POST['password']) >= 8) {
+        $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
+    } else {
+        echo "<p>Er is een probleem met de ingevoerde gebruikersnaam en/of wachtwoord </p>";
+        header("Location: registreren.php");
+        die();
+    }
+    $functie = filter_var($_POST['functie'], FILTER_VALIDATE_INT);
+
     switch($functie) {
         case 0:
             $functie = 'arts';
@@ -46,7 +50,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare('INSERT INTO user (username, password, functie) VALUES (:username, :password, :functie)');
     $query->bindParam(":username", $username, PDO::PARAM_STR);
     $query->bindParam(":password", $password, PDO::PARAM_STR);
-    $query->bindParam(":functie", $functie, PDO::PARAM_STR);
+    $query->bindParam(":functie", $functie, PDO::PARAM_INT);
     $query->execute();
     // echo($query->queryString);
     header('Location: ../index.php');
@@ -103,11 +107,11 @@ if (isset($_POST['submit'])) {
         <form method="POST">
             <div class="form-group">
                 <label for="Naam">Gebruikersnaam</label>
-                <input type="text" class="form-control" name="username" id="naam" value="">
+                <input type="text" class="form-control" name="username" id="naam" value="" minlength=8>
             </div>
             <div class="form-group">
                 <label for="wachtwoord">Wachtwoord</label>
-                <input type="password" class="form-control" name="password" id="wachtwoord" value="">
+                <input type="password" class="form-control" name="password" id="wachtwoord" value="" minlength=8>
             </div>
             <div class="form-group">
                 <label for="Functie">Functie</label>

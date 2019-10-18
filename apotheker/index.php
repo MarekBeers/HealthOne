@@ -84,7 +84,7 @@ if($_SESSION['functie'] != $functie) {
                 <th scope="col" class="text-danger">Dosis</th>
                 <th scope="col" class="text-danger">Ontvanger</th>
                 <th scope="col" class="text-danger">Uitschrijf datum</th>
-                <th scope="col" class="text-danger">Afhandeling</th>
+                <th scope="col" class="text-danger">Status</th>
             </tr>
             </thead>
             <tbody id="myTable">
@@ -116,7 +116,7 @@ if($_SESSION['functie'] != $functie) {
                         echo "<td>".$data2['naam'] ."</td>";
                     }
                     echo "<td>".$data['datum']."</td>";
-                    if($data['afgehandeld']) echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' ><button type='submit' name='submit' class='btn btn-info'>Afgehandeld</button></td>";
+                    if($data['afgehandeld']) echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' ><button type='submit' name='submit' class='btn btn-danger'>Afgehandeld</button></td>";
                     if(!$data['afgehandeld']) echo "<td><a href='index/update_afhandeling.php?id=" . $data['recept_id']. "' ><button type='submit' name='submit' class='btn btn-success'>Niet Afgehandeld</button></td>";
                     
                     echo "</tr>";
