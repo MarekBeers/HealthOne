@@ -63,7 +63,7 @@ catch(PDOException $e){
     die("wank".$e->getMessage());
 
 }
-// TODO: ACTION VAN ZORGVERZEKERAAR WEGHELPEN
+
 ?>
 
 <form action="<?php echo "edit/update.php?id=".$data['id'] ?>" method="POST">
