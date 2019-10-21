@@ -22,15 +22,8 @@ if($_SESSION['functie'] != $functie) {
 <body>
     <?php
 if (isset($_POST['submit'])) {
-    // $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    if(strlen($_POST['password']) >= 8 && strlen(filter_var($_POST['username'], FILTER_SANITIZE_STRING) >= 8)) {
-        $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
-    } else {
-        echo "<p>Er is een probleem met de ingevoerde gebruikersnaam en/of wachtwoord </p>";
-        header("Location: registreren.php");
-        die();
-    }
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING)); 
     $functie = filter_var($_POST['functie'], FILTER_VALIDATE_INT);
 
     switch($functie) {
@@ -51,7 +44,7 @@ if (isset($_POST['submit'])) {
     $query = $db->prepare('INSERT INTO user (username, password, functie) VALUES (:username, :password, :functie)');
     $query->bindParam(":username", $username, PDO::PARAM_STR);
     $query->bindParam(":password", $password, PDO::PARAM_STR);
-    $query->bindParam(":functie", $functie, PDO::PARAM_INT);
+    $query->bindParam(":functie", $functie, PDO::PARAM_STR);
     $query->execute();
     // echo($query->queryString);
     header('Location: ../index.php');
@@ -119,9 +112,9 @@ if (isset($_POST['submit'])) {
             <div class="form-group">
                 <label for="Functie">Functie</label>
                 <select name="functie" id="functie" class="form-control">
-                <option value="0">Arts</option>
-                <option value="1">Apotheker</option>
-                <option value="2">Verzekeringsmedewerker</option>
+                    <option value="0">Arts</option>
+                    <option value="1">Apotheker</option>
+                    <option value="2">Verzekeringsmedewerker</option>
                 </select>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Verstuur</button>

@@ -34,7 +34,11 @@ if (isset($_POST['submit'])) {
     $telefoonnummer = filter_var($_POST['telefoonnummer'], FILTER_SANITIZE_NUMBER_INT);
     $specialisatie = filter_var($_POST['specialisatie'], FILTER_SANITIZE_STRING);
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("insert into arts (naam, adres, telefoon, specialisatie) values ('$name', '$adres','$telefoonnummer', '$specialisatie');");
+    $query = $db->prepare("insert into arts (naam, adres, telefoon, specialisatie) values (:naam, :adres,:telefoon, :specialisatie);");
+    $query->bindParam(':naam', $name, PDO::PARAM_STR);
+    $query->bindParam(':adres', $adres, PDO::PARAM_STR);
+    $query->bindParam(':telefoon', $telefoonnummer, PDO::PARAM_STR);
+    $query->bindParam(':specialisatie', $specialisatie, PDO::PARAM_STR);
     $query->execute();
 //    echo($query->queryString);
     header('Location: artsen_beheer.php');
@@ -45,7 +49,7 @@ if (isset($_POST['submit'])) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="verzekeraar_index.php">
-                <img class="navbrand" src="../img/healthtwo_logo_transparent.png" alt="Logo">
+                <img class="navbrand" src="../../img/healthtwo_logo_transparent.png" alt="Logo">
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav">

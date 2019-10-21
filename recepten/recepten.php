@@ -89,7 +89,8 @@
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as &$data){
                         $id = $data['patient_id'];
-                        $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = $id");
+                        $query2 = $db->prepare("SELECT * FROM patient WHERE patient_id = :id");
+                        $query2->bindParam(':id', $id, PDO::PARAM_STR);
                         $query2->execute();
                         $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                         echo "<tr>";
