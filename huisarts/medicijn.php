@@ -97,7 +97,8 @@ if($_SESSION['functie'] != $functie) {
                     echo "<td>".$data['id']."</td>";
                     echo "<td>".$data["naam"] ."</td>";
                     echo "<td> &#8364;	" . $data['prijs'] . "</td>";
-//                    echo "<td><a href='patient_info.php?id=".$data['patient_id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
+
+                    echo "<td><a href='medicijn_info.php?id=".$data['id']."'>"."<button type=\"button\" class=\"btn btn-info\">Info</button></a></td>";
                     echo "</tr>";
 
                 }

@@ -55,11 +55,11 @@ if($_SESSION['functie'] != $functie) {
         <thead>
         <tr>
             <th class="text-danger">Naam</th>
-            <th class="text-danger">fabrikant</th>
-            <th class="text-danger">vergoeding</th>
-            <th class="text-danger">effect</th>
-            <th class="text-danger">bijwerkingen</th>
-            <th class="text-danger">prijs</th>
+            <th class="text-danger">Fabrikant</th>
+            <th class="text-danger">Vergoeding</th>
+            <th class="text-danger">Effect</th>
+            <th class="text-danger">Bijwerkingen</th>
+            <th class="text-danger">Prijs</th>
         </tr>
         </thead>
         <tbody>
@@ -108,7 +108,6 @@ if($_SESSION['functie'] != $functie) {
             foreach ($result as &$data) {
                 echo "<a href='info/edit.php?id=" . $data['id'] . "'>" . "<button type=\"button\" class=\"btn btn-warning\">Edit</button></a>";
                 echo "<a href='info/delete.php?id=" . $data['id'] . "'>" . "<button type=\"button\" class=\"btn btn-danger\">Delete</button></a>";
-
 
             }
         }
