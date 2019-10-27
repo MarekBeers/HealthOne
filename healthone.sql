@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 okt 2019 om 11:32
--- Serverversie: 10.4.6-MariaDB
--- PHP-versie: 7.3.9
+-- Gegenereerd op: 28 okt 2019 om 00:00
+-- Serverversie: 10.4.8-MariaDB
+-- PHP-versie: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,7 +73,8 @@ INSERT INTO `arts` (`id`, `naam`, `specialisatie`, `adres`, `telefoon`) VALUES
 (33, 'Lee Camis', 'Curabitur convallis. Duis consequat dui nec n', '20 Arapahoe Road', ''),
 (34, 'Dorri Arter', 'Mauris lacinia sapien quis libero. Nullam sit', '516 Esch Hill', ''),
 (35, 'Cherise Bucknall', 'Nulla ut erat id mauris vulputate elementum. ', '66706 Vera Circle', ''),
-(36, 'Lawton Eagle', 'Etiam vel augue. Vestibulum rutrum rutrum neq', '78582 Lukken Avenue', '');
+(36, 'Lawton Eagle', 'Etiam vel augue. Vestibulum rutrum rutrum neq', '78582 Lukken Avenue', ''),
+(37, 'Big Brackin', 'asdasda ', 'fsfasd 2', '068722222');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `medicijn` (
 --
 
 INSERT INTO `medicijn` (`id`, `naam`, `fabrikant`, `vergoeding`, `bijwerkingen`, `effect`, `prijs`) VALUES
-(25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op kanker.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
+(25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op griep.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
 (27, 'Maalox', 'C-Bedrijf', 1, 'Maagdarmklachten', 'Algeldraat en magnesiumzouten binden maagzuur. Dit maakt de maaginhoud minder zuur.', 20.02),
 (28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99);
 
@@ -122,7 +123,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum`, `adres`, `verzekeringnummer`, `arts_id`) VALUES
-(81, 'Harriott Spincks', 'hspincks0@thetimes.co.uk', '536428465', '2018-10-02', '810 Goodland Road', 89900, 0),
+(81, 'Harriott Spincks', 'hspincks0@thetimes.co.uk', '0644444444', '2018-10-02', '810 Goodland Road', 8990021, 21),
 (82, 'Christoper Austing', 'causting1@tmall.com', '660926943', '2019-04-11', '834 Hintze Lane', 27223, 0),
 (83, 'Chicky Febvre', 'cfebvre2@ihg.com', '387518550', '2019-02-19', '89 Ilene Street', 74491, 0),
 (84, 'Francoise Dancey', 'fdancey3@joomla.org', '476992352', '2019-01-08', '68 Anthes Circle', 48593, 0),
@@ -162,6 +163,7 @@ INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum
 (118, 'Bernice Whisson', 'bwhisson11@parallels.com', '831454036', '2019-02-09', '21590 Emmet Road', 23622, 0),
 (119, 'Jermaine Bacher', 'jbacher12@meetup.com', '623934899', '2019-05-04', '15 Acker Drive', 81297, 0),
 (120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -191,20 +193,41 @@ CREATE TABLE `recept` (
   `afgehandeld` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Gegevens worden geëxporteerd voor tabel `recept`
+-- Tabelstructuur voor tabel `user`
 --
 
-INSERT INTO `recept` (`recept_id`, `patient_id`, `dosis`, `herhalingsrecept`, `medicijn_id`, `commentaar`, `datum`, `afgehandeld`) VALUES
-(6, 81, '3', 0, 25, 'jhg', '07-10-2019 09:33', 1),
-(7, 81, '45', 1, 25, '', '07-10-2019 10:16', 1),
-(8, 81, '675ml', 0, 28, 'j', '07-10-2019 10:17', 1),
-(9, 81, 'yuh', 1, 27, 'perhaps', '07-10-2019 10:30', 1),
-(10, 81, '675ml', 0, 25, '', '07-10-2019 11:30', 1);
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `functie` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `functie`) VALUES
+(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker');
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
+
+--
+-- Indexen voor tabel `arts`
+--
+ALTER TABLE `arts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `medicijn`
+--
+ALTER TABLE `medicijn`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `patient`
@@ -225,8 +248,26 @@ ALTER TABLE `recept`
   ADD PRIMARY KEY (`recept_id`,`medicijn_id`);
 
 --
+-- Indexen voor tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
+
+--
+-- AUTO_INCREMENT voor een tabel `arts`
+--
+ALTER TABLE `arts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT voor een tabel `medicijn`
+--
+ALTER TABLE `medicijn`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT voor een tabel `patient`
@@ -244,7 +285,13 @@ ALTER TABLE `patient_notities`
 -- AUTO_INCREMENT voor een tabel `recept`
 --
 ALTER TABLE `recept`
-  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT voor een tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

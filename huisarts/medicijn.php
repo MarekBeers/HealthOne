@@ -81,7 +81,7 @@ if($_SESSION['functie'] != $functie) {
                 <th scope="col" class="text-danger">#</th>
                 <th scope="col" class="text-danger">Medicijn</th>
                 <th scope="col" class="text-danger">Prijs</th>
-              <!-- <th scope="col" class="text-danger">Info</th> -->
+				<th scope="col" class="text-danger">Info</th>
             </tr>
             </thead>
             <tbody id="myTable">
