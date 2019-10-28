@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 28 okt 2019 om 00:00
--- Serverversie: 10.4.8-MariaDB
--- PHP-versie: 7.3.10
+-- Gegenereerd op: 28 okt 2019 om 09:44
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,6 @@ CREATE TABLE `arts` (
 --
 
 INSERT INTO `arts` (`id`, `naam`, `specialisatie`, `adres`, `telefoon`) VALUES
-(4, 'Artemas Genney', 'Quisque erat eros, viverra eget, congue eget,', '73195 Lukken Center', '534543'),
 (5, 'Kipp Jenkerson', 'Cum sociis natoque penatibus et magnis dis pa', '6511 Hallows Lane', '5345432'),
 (6, 'Lilah Craiker', 'Maecenas ut massa quis augue luctus tincidunt', '56 Farragut Place', '12321'),
 (7, 'Elane Gresty', 'Nulla ut erat id mauris vulputate elementum. ', '9119 Ridge Oak Crossing', '543543'),
@@ -73,8 +72,7 @@ INSERT INTO `arts` (`id`, `naam`, `specialisatie`, `adres`, `telefoon`) VALUES
 (33, 'Lee Camis', 'Curabitur convallis. Duis consequat dui nec n', '20 Arapahoe Road', ''),
 (34, 'Dorri Arter', 'Mauris lacinia sapien quis libero. Nullam sit', '516 Esch Hill', ''),
 (35, 'Cherise Bucknall', 'Nulla ut erat id mauris vulputate elementum. ', '66706 Vera Circle', ''),
-(36, 'Lawton Eagle', 'Etiam vel augue. Vestibulum rutrum rutrum neq', '78582 Lukken Avenue', ''),
-(37, 'Big Brackin', 'asdasda ', 'fsfasd 2', '068722222');
+(36, 'Lawton Eagle', 'Etiam vel augue. Vestibulum rutrum rutrum neq', '78582 Lukken Avenue', '');
 
 -- --------------------------------------------------------
 
@@ -97,9 +95,10 @@ CREATE TABLE `medicijn` (
 --
 
 INSERT INTO `medicijn` (`id`, `naam`, `fabrikant`, `vergoeding`, `bijwerkingen`, `effect`, `prijs`) VALUES
-(25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op griep.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
+(25, 'Anticonceptiepil', 'A-Medical', 0, 'Kans op kanker.', 'De hormonen in de pil zorgen dat er geen eicel vrij komen.', 1.00),
 (27, 'Maalox', 'C-Bedrijf', 1, 'Maagdarmklachten', 'Algeldraat en magnesiumzouten binden maagzuur. Dit maakt de maaginhoud minder zuur.', 20.02),
-(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99);
+(28, 'Paracetemol', 'A-Medical', 1, 'Medicijnafhankelijke hoofdpijn', 'Paracetamol stilt pijn en verlaagt koorts', 5.99),
+(0, 'Oxazepam', 'Z-Medical', 1, 'Sufheid, vermoeidheid.', 'Oxazepam werkt rustgevend vermindert angstgevoelens, ontspant spieren en maakt suf.', 6.49);
 
 -- --------------------------------------------------------
 
@@ -123,7 +122,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum`, `adres`, `verzekeringnummer`, `arts_id`) VALUES
-(81, 'Harriott Spincks', 'hspincks0@thetimes.co.uk', '0644444444', '2018-10-02', '810 Goodland Road', 8990021, 21),
+(81, 'Harriott Spincks', 'hspincks0@thetimes.co.uk', '536428465', '2018-10-02', '810 Goodland Road', 899002, 0),
 (82, 'Christoper Austing', 'causting1@tmall.com', '660926943', '2019-04-11', '834 Hintze Lane', 27223, 0),
 (83, 'Chicky Febvre', 'cfebvre2@ihg.com', '387518550', '2019-02-19', '89 Ilene Street', 74491, 0),
 (84, 'Francoise Dancey', 'fdancey3@joomla.org', '476992352', '2019-01-08', '68 Anthes Circle', 48593, 0),
@@ -162,7 +161,8 @@ INSERT INTO `patient` (`patient_id`, `naam`, `email`, `telefoon`, `geboortedatum
 (117, 'Alameda Clewett', 'aclewett10@fc2.com', '643214859', '2019-07-13', '36 Forest Dale Junction', 71038, 0),
 (118, 'Bernice Whisson', 'bwhisson11@parallels.com', '831454036', '2019-02-09', '21590 Emmet Road', 23622, 0),
 (119, 'Jermaine Bacher', 'jbacher12@meetup.com', '623934899', '2019-05-04', '15 Acker Drive', 81297, 0),
-(120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0);
+(120, 'Allyn Pickthorne', 'apickthorne13@sina.com.cn', '221526006', '2019-08-30', '163 Colorado Place', 74272, 0),
+(124, 'dsfds', 'dsfdsf@gmail.com', '1872638721', '1111-11-11', 'hgfxfg 54', 11121121, 0);
 
 -- --------------------------------------------------------
 
@@ -193,6 +193,24 @@ CREATE TABLE `recept` (
   `afgehandeld` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `recept`
+--
+
+INSERT INTO `recept` (`recept_id`, `patient_id`, `dosis`, `herhalingsrecept`, `medicijn_id`, `commentaar`, `datum`, `afgehandeld`) VALUES
+(6, 81, '3', 0, 25, 'jhg', '07-10-2019 09:33', 1),
+(7, 81, '45', 1, 25, '', '07-10-2019 10:16', 1),
+(8, 81, '675ml', 0, 28, 'j', '07-10-2019 10:17', 1),
+(9, 81, 'yuh', 1, 27, 'perhaps', '07-10-2019 10:30', 1),
+(10, 81, '675ml', 0, 25, '', '07-10-2019 11:30', 1),
+(11, 81, '32', 0, 27, '', '07-10-2019 11:39', 1),
+(12, 81, '675ml', 0, 28, 'vhgfdhgd', '07-10-2019 11:55', 1),
+(13, 82, '5', 1, 28, '654', '07-10-2019 12:12', 1),
+(14, 81, 'gfdg', 0, 25, 'hfdhgfds', '10-10-2019 10:26', 1),
+(15, 81, '6565', 1, 25, '', '14-10-2019 11:06', 1),
+(16, 81, '', 1, 25, '6655', '14-10-2019 11:09', 1),
+(17, 81, '', 1, 25, '', '14-10-2019 12:29', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -203,37 +221,30 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `functie` varchar(40) NOT NULL
+  `functie` varchar(40) NOT NULL,
+  `functie_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `functie`) VALUES
-(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker');
+INSERT INTO `user` (`id`, `username`, `password`, `functie`, `functie_id`) VALUES
+(1, 'younggods', '14abcb3d9b877e76a9c361b6b7a0d75f17d06a0f', 'arts', 0),
+(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker', 0),
+(6, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'verzekeringsmedewerker', 0),
+(7, 'arts', '79a9d178235eb1dcd4bbeaa340691c29807ca706', 'arts', 0),
+(8, 'apo', '165bb958d09bad542688805fdf14b62a87ce4440', 'apotheker', 0);
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexen voor tabel `arts`
---
-ALTER TABLE `arts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `medicijn`
---
-ALTER TABLE `medicijn`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexen voor tabel `patient`
 --
 ALTER TABLE `patient`
-  ADD PRIMARY KEY (`patient_id`);
+  ADD PRIMARY KEY (`patient_id`,`arts_id`);
 
 --
 -- Indexen voor tabel `patient_notities`
@@ -258,40 +269,28 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `arts`
---
-ALTER TABLE `arts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT voor een tabel `medicijn`
---
-ALTER TABLE `medicijn`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
 -- AUTO_INCREMENT voor een tabel `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `patient_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `patient_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT voor een tabel `patient_notities`
 --
 ALTER TABLE `patient_notities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `recept`
 --
 ALTER TABLE `recept`
-  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `recept_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
