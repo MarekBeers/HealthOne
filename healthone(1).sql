@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 28 okt 2019 om 00:00
--- Serverversie: 10.4.8-MariaDB
--- PHP-versie: 7.3.10
+-- Gegenereerd op: 28 okt 2019 om 09:56
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -211,7 +211,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `functie`) VALUES
-(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'apotheker');
+(5, 'abc', '589c22335a381f122d129225f5c0ba3056ed5811', 'verzekeringsmedewerker'),
+(7, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'verzekeringsmedewerker'),
+(8, 'apo', '165bb958d09bad542688805fdf14b62a87ce4440', 'apotheker'),
+(9, 'arts', '79a9d178235eb1dcd4bbeaa340691c29807ca706', 'arts');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -291,7 +294,7 @@ ALTER TABLE `recept`
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

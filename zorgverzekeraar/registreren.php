@@ -101,12 +101,12 @@ if (isset($_POST['submit'])) {
         <form method="POST">
             <div class="form-group">
                 <label for="Naam">Gebruikersnaam</label>
-                <input type="text" class="form-control" name="username" id="naam" value="" minlength=8>
+                <input type="text" class="form-control" name="username" id="naam" value="" minlength=8 autocomplete="off">
                 <small>Minimaal 8 karakters.</small>
             </div>
             <div class="form-group">
                 <label for="wachtwoord">Wachtwoord</label>
-                <input type="password" class="form-control" name="password" id="wachtwoord" value="" minlength=8>
+                <input type="password" class="form-control" name="password" id="wachtwoord" value="" minlength=8 autocomplete="off">
                 <small>Minimaal 8 karakters.</small>
             </div>
             <div class="form-group">
